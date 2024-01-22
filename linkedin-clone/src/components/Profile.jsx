@@ -1,6 +1,7 @@
 import { Col, Container, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
+import ModalProfile from "./ModalProfile";
 
 const Profile = () => {
   return (
@@ -35,9 +36,10 @@ const Profile = () => {
             <Col>
               <Row className=" justify-content-end  ">
                 <Col xs={2}>
-                  <button className="outlineButtonsProfileGrey rounded-circle ">
+                  {/* <button className="outlineButtonsProfileGrey rounded-circle ">
                     <i className="bi bi-pencil fs-5"></i>
-                  </button>
+                  </button> */}
+                  <ModalProfile />
                 </Col>
               </Row>
             </Col>

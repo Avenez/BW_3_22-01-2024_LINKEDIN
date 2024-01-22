@@ -15,11 +15,11 @@ const ModalProfile = () => {
       <Button
         variant="white"
         onClick={handleShow}
-        className="mt-5 rounded-circle"
+        className="outlineButtonsProfileGrey rounded-circle"
         onMouseOver={(e) => (e.target.style.backgroundColor = "#ebebeb")}
         onMouseOut={(e) => (e.target.style.backgroundColor = "white")}
       >
-        <Pencil className="fs-4" style={{ color: "#5e5e5e" }}></Pencil>
+        <Pencil className="fs-4"></Pencil>
       </Button>
 
       <Modal show={show} onHide={handleClose} className="text-secondary">
