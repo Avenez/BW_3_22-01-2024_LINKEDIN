@@ -1,7 +1,13 @@
 .App {
   text-align: center;
 }
+/* -------------GENERAL--------- */
 
+.cursor {
+  cursor: pointer;
+}
+
+/* --------PROFILE---------- */
 .bgProfile {
   object-fit: cover;
   width: 100%;
@@ -56,3 +62,5 @@
 .outlineButtons:hover {
   background-color: #daeaff;
 }
+
+/* ------------------------------ */
