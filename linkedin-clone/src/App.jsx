@@ -3,8 +3,8 @@ import "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 // import { BrowserRouter, Route, Routes } from "react-router";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import LinkNav from "./component/LinkNav";
-import Main from "./component/Main";
+import LinkNav from "./components/LinkNav";
+import Main from "./components/Main";
 
 function App() {
   return (

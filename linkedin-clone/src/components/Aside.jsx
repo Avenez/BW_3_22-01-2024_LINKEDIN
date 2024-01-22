@@ -8,7 +8,7 @@ const Aside = () => {
         <div>
           <Row>
             <Col>
-              <div className="bg-white mt-3 mb-2 rounded border border-seondary-light">
+              <div className="bg-white mb-2 rounded border border-seondary-light">
                 <div>
                   <div className="d-flex justify-content-between mx-2 mt-2">
                     <h5>Lingua del profilo</h5>
