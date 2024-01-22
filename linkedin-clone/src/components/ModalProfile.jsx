@@ -22,11 +22,11 @@ const ModalProfile = () => {
         <Pencil className="fs-4"></Pencil>
       </Button>
 
-      <Modal show={show} onHide={handleClose} className="text-secondary">
+      <Modal show={show} onHide={handleClose} className="text-secondary" centered>
         <Modal.Header closeButton>
           <Modal.Title className="text-dark">Modifica presentazione</Modal.Title>
         </Modal.Header>
-        <Modal.Body className="pt-1">
+        <Modal.Body className="pt-1" style={{ overflowY: "auto", maxHeight: "calc(100vh - 200px)" }}>
           <p className="fs-6 mt-0 ">*Indica che è obbligatorio</p>
           <Form>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
@@ -35,11 +35,11 @@ const ModalProfile = () => {
             </Form.Group>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label className="">Cognome*</Form.Label>
-              <Form.Control type="text" placeholder="" className="border border-dark" autoFocus required />
+              <Form.Control type="text" placeholder="" className="border border-dark" required />
             </Form.Group>
             <Form.Group className="mb-4" controlId="exampleForm.ControlInput1">
               <Form.Label className="">Nome aggiuntivo</Form.Label>
-              <Form.Control type="text" placeholder="" className="border border-dark" autoFocus />
+              <Form.Control type="text" placeholder="" className="border border-dark" />
             </Form.Group>
             <p className="pt-2 mb-2 ">Pronuncia del nome</p>
             <p style={{ color: "#56687a" }}>
@@ -47,7 +47,7 @@ const ModalProfile = () => {
             </p>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label className="">Inserisci pronomi personalizzati</Form.Label>
-              <Form.Control type="text" placeholder="" className="border border-dark" autoFocus />
+              <Form.Control type="text" placeholder="" className="border border-dark" />
             </Form.Group>
             <p className="">Indica i pronomi di genere che vuoi che gli altri usino per riferirsi a te.</p>
             <p className="">
@@ -58,7 +58,7 @@ const ModalProfile = () => {
             </p>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label className="">Sommario*</Form.Label>
-              <Form.Control type="text" placeholder="" className="border border-dark" autoFocus required />
+              <Form.Control type="text" placeholder="" className="border border-dark" required />
             </Form.Group>
             <h4 className="text-dark">Posizione attuale</h4>
             <Form.Group controlId="exampleForm.SelectCustom" className="mb-3">
@@ -78,7 +78,7 @@ const ModalProfile = () => {
             <Form.Check type="checkbox" id="custom-checkbox" label="Mostra l'azienda attuale nella mia presentazione" />
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label className="">Settore*</Form.Label>
-              <Form.Control type="text" placeholder="" className="border border-dark" autoFocus required />
+              <Form.Control type="text" placeholder="" className="border border-dark" required />
             </Form.Group>
             <p className="">
               Scopri di più sulle{" "}
@@ -105,16 +105,16 @@ const ModalProfile = () => {
           <Form.Check type="checkbox" id="custom-checkbox" label="Mostra la formazione nella mia presentazione" />
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
             <Form.Label className="">Settore*</Form.Label>
-            <Form.Control type="text" placeholder="" className="border border-dark" autoFocus required />
+            <Form.Control type="text" placeholder="" className="border border-dark" required />
           </Form.Group>
           <h4 className="text-dark">Località</h4>
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
             <Form.Label className="">Paese/Area geografica*</Form.Label>
-            <Form.Control type="text" placeholder="" className="border border-dark" autoFocus required />
+            <Form.Control type="text" placeholder="" className="border border-dark" required />
           </Form.Group>
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
             <Form.Label className="">CAP</Form.Label>
-            <Form.Control type="text" placeholder="" className="border border-dark" autoFocus />
+            <Form.Control type="text" placeholder="" className="border border-dark" />
           </Form.Group>
           <Form.Group controlId="exampleForm.SelectCustom" className="mb-4">
             <Form.Label className="">Città*</Form.Label>
