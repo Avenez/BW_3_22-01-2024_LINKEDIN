@@ -32,6 +32,33 @@
   width: 130px;
   height: 130px;
 }
+.icon {
+  width: 40px;
+  height: 40px;
+}
+.myform {
+  padding-right: 100px;
+}
+.iconSpace,
+.mercado-match {
+  margin-inline: 25px;
+  color: #666666;
+  font-size: small;
+}
+
+.resized-avatar {
+  width: 30px;
+  height: 30px;
+}
+
+.allContainer {
+  max-width: 1155px;
+  display: flex;
+  justify-content: center;
+}
+.form {
+  background-color: #61dafb;
+}
 
 .Verify {
   font-size: 15px;

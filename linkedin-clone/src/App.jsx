@@ -1,21 +1,21 @@
-import logo from "./logo.svg";
 import "./App.css";
+import "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Container } from "react-bootstrap";
-import { Router, Route, Routes } from "react-router";
-import { BrowserRouter } from "react-router-dom";
-import Main from "./components/Main";
+// import { BrowserRouter, Route, Routes } from "react-router";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import LinkNav from "./component/LinkNav";
+import Main from "./component/Main";
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
+        <LinkNav />
         <Routes>
-          <Route path="/" element={<Main />} />
+          <Route path="" element={<Main />} />
         </Routes>
       </BrowserRouter>
     </div>
   );
 }
-
 export default App;
