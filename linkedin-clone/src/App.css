@@ -2,6 +2,10 @@
 .App {
   background-color: #f3f2ee;
 }
+h5 {
+  margin-bottom: 0px;
+}
+
 .cursor {
   cursor: pointer;
 }
@@ -46,6 +50,7 @@
   margin-inline: 25px;
   color: #666666;
   font-size: small;
+  margin-bottom: 0;
 }
 .netNav {
   border-left: solid 1px #666666;
@@ -69,6 +74,11 @@
   color: black;
   fill: rgb(31, 17, 17);
   cursor: pointer;
+}
+
+.eyes {
+  fill: #666666;
+  margin-right: 5px;
 }
 
 .resized-avatar {
@@ -99,6 +109,8 @@
 
 .profileContainer {
   border: 1px solid black;
+  /* bg aggiunto da Mariline */
+  background-color: #ffffff;
   border-radius: 10px;
 }
 

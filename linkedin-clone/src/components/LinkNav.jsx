@@ -21,7 +21,7 @@ function LinkNav() {
           <LinkedIn_icon className="icon me-3 py-0" />
           <input type="text" id="lname" name="lname" placeholder="Cerca" className="inputNav py-0" />
         </div>
-        <div className="d-flex">
+        <div className="d-flex justify-content-end align-items-center">
           <LogoHome />
           <LogoNet />
           <LogoJob />
