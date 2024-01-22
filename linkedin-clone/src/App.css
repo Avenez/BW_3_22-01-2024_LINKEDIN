@@ -40,11 +40,19 @@
   text-decoration: none;
 }
 
-.links:hover {
-  text-decoration: underline;
-}
-
 .profileContainer {
   border: 1px solid black;
   border-radius: 10px;
+}
+
+.outlineButtons {
+  padding: 5px;
+  border: 1.5px solid #0a5ed7;
+  color: #0a5ed7;
+  font-weight: bold;
+  background-color: white;
+}
+
+.outlineButtons:hover {
+  background-color: #daeaff;
 }

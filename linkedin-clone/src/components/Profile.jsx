@@ -11,7 +11,7 @@ const Profile = () => {
             <div className="position-relative p-0 ">
               <img
                 className="bgProfile"
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqpXNJGDXWFxxvScE6r9U2dCAzvJs8w_jHLIXdzGsL16m99UGs"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTu0lWaaWP-WmtxAAWkwJGAZFMyER0nyOUdsjF2d0aCap0mS1rO"
                 alt="profileBg"
               />
               <i className="bi bi-camera-fill text-primary photoBgIcon "></i>
@@ -45,7 +45,7 @@ const Profile = () => {
                 <Row className="mt-4 text-start">
                   <Col className="d-md-flex ">
                     <h2>ProfileName</h2>
-                    <button className="d-flex align-items-center btn  btn-outline-primary rounded-5  fw-bold fw-bolder ms-2 py-0  ">
+                    <button className="d-flex align-items-center outlineButtons px-2  rounded-5  fw-bold fw-bolder ms-2 py-0  ">
                       <i class="bi bi-shield-check me-1"></i>
                       <p className="Verify mb-0 p-0  ">Inizia la verifica</p>
                     </button>
@@ -77,17 +77,17 @@ const Profile = () => {
               <Col></Col>
             </Row>
             <Row className="text-secondary mt-2 justify-content-start  ">
-              <Col xs={4} md={2} className="p-0 text-start ">
-                <button className="btn btn-primary rounded-4 fw-bold">Disponibile per</button>
+              <Col xs={4} md={2} className="p-0 text-start me-1 ">
+                <button className="btn btn-primary rounded-4 fw-bold w-100">Disponibile per</button>
               </Col>
-              <Col xs={6} md={4} className="p-0  text-center">
-                <button className="btn btn-outline-primary rounded-4 fw-bold">Aggiungi sezione del profilo</button>
+              <Col xs={6} md={4} className="p-0  text-center me-1">
+                <button className="outlineButtons rounded-4 fw-bold w-100 ">Aggiungi sezione del profilo</button>
               </Col>
-              <Col xs={2} md={1} className="ms-1 p-0 text-start">
-                <button className="d-sm-inline-block d-md-none btn btn-outline-secondary  rounded-5 fw-bold">
+              <Col xs={2} md={1} className=" p-0 text-start">
+                <button className="d-inline-block d-md-none btn btn-outline-secondary  rounded-5 fw-bold ">
                   <i class="bi bi-three-dots"></i>
                 </button>
-                <button className=" d-sm-none d-md-inline-block btn btn-outline-secondary  rounded-4 fw-bold ">
+                <button className=" d-none d-md-inline-block btn btn-outline-secondary  rounded-4 fw-bold w-100">
                   Altro
                 </button>
               </Col>
