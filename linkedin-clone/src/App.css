@@ -28,13 +28,18 @@
   height: 40px;
 }
 .myform {
-  padding-right: 100px;
+  width: 200px;
 }
 .iconSpace,
 .mercado-match {
   margin-inline: 25px;
   color: #666666;
   font-size: small;
+}
+
+.mercado-match:hover {
+  color: black;
+  fill: black;
 }
 
 .resized-avatar {
@@ -46,9 +51,6 @@
   max-width: 1155px;
   display: flex;
   justify-content: center;
-}
-.form {
-  background-color: #61dafb;
 }
 
 .App-link {
