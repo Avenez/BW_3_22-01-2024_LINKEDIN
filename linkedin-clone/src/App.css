@@ -40,6 +40,7 @@
 .mercado-match:hover {
   color: black;
   fill: black;
+  cursor: pointer;
 }
 
 .resized-avatar {
@@ -48,7 +49,6 @@
 }
 
 .allContainer {
-  max-width: 1155px;
   display: flex;
   justify-content: center;
 }

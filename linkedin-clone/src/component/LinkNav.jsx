@@ -16,7 +16,7 @@ import Navbar from "react-bootstrap/Navbar";
 function LinkNav() {
   return (
     <Navbar className="bg-white sticky-top pt-0">
-      <Container className="w-100">
+      <Container className="">
         <LinkedIn_icon className="icon" />
         <Form className=" ps-3 ">
           <Form.Control type="search" placeholder="Cerca" className="myform" aria-label="Search" />
