@@ -37,6 +37,13 @@
   font-size: small;
 }
 
+.user:hover {
+  cursor: pointer;
+}
+
+.bord:hover {
+  border-bottom: solid 2px black;
+}
 .mercado-match:hover {
   color: black;
   fill: black;
