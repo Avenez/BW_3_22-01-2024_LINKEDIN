@@ -42,8 +42,13 @@
 }
 
 .links {
+  color: #0966c2;
   font-weight: bold;
   text-decoration: none;
+}
+
+.links:hover {
+  color: #0a5ed7;
 }
 
 .profileContainer {
@@ -53,14 +58,44 @@
 
 .outlineButtons {
   padding: 5px;
-  border: 1.5px solid #0a5ed7;
-  color: #0a5ed7;
+  border: 1.5px solid #0966c2;
+  color: #0966c2;
   font-weight: bold;
   background-color: white;
+  transition: ease-in-out 0.1s;
 }
 
 .outlineButtons:hover {
   background-color: #daeaff;
+  border: 2px solid #0a5ed7;
+  color: #0a5ed7;
+  transition: ease-in-out 0.1s;
+}
+
+.outlineButtonsProfile {
+  padding: 5px;
+  color: #0966c2;
+  font-weight: bold;
+  background-color: white;
+  transition: ease-in-out 0.3s;
+}
+
+.outlineButtonsProfile:hover {
+  background-color: white;
+  border: 1px solid #0a5ed7;
+  color: #0a5ed7;
+  transition: ease-in-out 0.1s;
+}
+
+.outlineButtonsProfileGrey {
+  border: 0px;
+  background-color: white;
+  color: #6c757d;
+}
+
+.outlineButtonsProfileGrey:hover {
+  background-color: #d4d4d4;
+  color: #6c757d;
 }
 
 /* ------------------------------ */

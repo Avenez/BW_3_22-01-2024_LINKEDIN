@@ -10,13 +10,13 @@ const Profile = () => {
           <Row className="">
             <div className="position-relative p-0 cursor">
               <input type="file" id="bgImage" hidden />
-              <label htmlFor="bgImage" className="bgProfile cursor">
+              <label htmlFor="bgImage" className="bgProfile cursor ">
                 <img
                   className="bgProfile"
                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTu0lWaaWP-WmtxAAWkwJGAZFMyER0nyOUdsjF2d0aCap0mS1rO"
                   alt="profileBg"
                 />
-                <i className="bi bi-camera-fill text-primary photoBgIcon "></i>
+                <i className="bi bi-camera-fill text-primary photoBgIcon outlineButtonsProfile "></i>
               </label>
               <div className="">
                 <input type="file" id="profileImage" hidden />
@@ -35,7 +35,7 @@ const Profile = () => {
             <Col>
               <Row className=" justify-content-end  ">
                 <Col xs={2}>
-                  <button className=" btn btn-outline-secondary  border-0 rounded-circle ">
+                  <button className="outlineButtonsProfileGrey rounded-circle ">
                     <i className="bi bi-pencil fs-5"></i>
                   </button>
                 </Col>
@@ -84,7 +84,9 @@ const Profile = () => {
                 <button className="btn btn-primary rounded-4 fw-bold w-100">Disponibile per</button>
               </Col>
               <Col xs={5} md={4} className="p-0  text-center me-1">
-                <button className="outlineButtons rounded-4 fw-bold w-100 ">Aggiungi sezione del profilo</button>
+                <button className="outlineButtons rounded-4 fw-bold w-100 m-auto  ">
+                  Aggiungi sezione del profilo
+                </button>
               </Col>
               <Col xs={2} md={1} className=" p-0 text-start">
                 <button className="d-inline-block d-md-none btn btn-outline-secondary  rounded-5 fw-bold ">
