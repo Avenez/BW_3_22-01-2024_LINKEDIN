@@ -70,7 +70,7 @@ const ModalProfile = () => {
               </Form.Select>
             </Form.Group>
             <div className="mb-4" style={{ fontWeight: "bold" }}>
-              <a href="" style={{ textDecoration: "none" }}>
+              <a href="" style={{ textDecoration: "none", color: "#0a66c2" }}>
                 <Plus />
                 Aggiungi una nuova posizione lavorativa
               </a>
@@ -78,11 +78,11 @@ const ModalProfile = () => {
             <Form.Check type="checkbox" id="custom-checkbox" label="Mostra l'azienda attuale nella mia presentazione" />
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label className="">Settore*</Form.Label>
-              <Form.Control type="text" placeholder="" autoFocus required />
+              <Form.Control type="text" placeholder="" className="border border-dark" autoFocus required />
             </Form.Group>
             <p className="">
               Scopri di più sulle{" "}
-              <a href="" style={{ textDecoration: "none", fontWeight: "bold" }}>
+              <a href="" style={{ textDecoration: "none", fontWeight: "bold", color: "#0a66c2" }}>
                 opzioni relative al settore
               </a>
             </p>
@@ -90,14 +90,14 @@ const ModalProfile = () => {
           <h4 className="text-dark">Formazione</h4>
           <Form.Group controlId="exampleForm.SelectCustom" className="mb-3">
             <Form.Label className="">Formazione*</Form.Label>
-            <Form.Select custom required>
+            <Form.Select className="border border-dark" custom required>
               <option>Elemento 1</option>
               <option>Elemento 2</option>
               <option>Elemento 3</option>
             </Form.Select>
           </Form.Group>
           <div className="mb-4" style={{ fontWeight: "bold" }}>
-            <a href="" style={{ textDecoration: "none" }}>
+            <a href="" style={{ textDecoration: "none", color: "#0a66c2" }}>
               <Plus />
               Aggiungi un nuovo grado di formazione
             </a>
@@ -105,20 +105,20 @@ const ModalProfile = () => {
           <Form.Check type="checkbox" id="custom-checkbox" label="Mostra la formazione nella mia presentazione" />
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
             <Form.Label className="">Settore*</Form.Label>
-            <Form.Control type="text" placeholder="" autoFocus required />
+            <Form.Control type="text" placeholder="" className="border border-dark" autoFocus required />
           </Form.Group>
           <h4 className="text-dark">Località</h4>
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
             <Form.Label className="">Paese/Area geografica*</Form.Label>
-            <Form.Control type="text" placeholder="" autoFocus required />
+            <Form.Control type="text" placeholder="" className="border border-dark" autoFocus required />
           </Form.Group>
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
             <Form.Label className="">CAP</Form.Label>
-            <Form.Control type="text" placeholder="" autoFocus />
+            <Form.Control type="text" placeholder="" className="border border-dark" autoFocus />
           </Form.Group>
           <Form.Group controlId="exampleForm.SelectCustom" className="mb-4">
             <Form.Label className="">Città*</Form.Label>
-            <Form.Select custom required>
+            <Form.Select className="border border-dark" custom required>
               <option>Elemento 1</option>
               <option>Elemento 2</option>
               <option>Elemento 3</option>
