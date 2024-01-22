@@ -1,5 +1,6 @@
 import { Col, Container, Row } from "react-bootstrap";
 import Profile from "./Profile";
+import Analisi from "./Analisi";
 import Aside from "./Aside";
 
 const Main = () => {
@@ -7,8 +8,9 @@ const Main = () => {
     <>
       <Container>
         <Row>
-          <Col xs={10} md={8}>
+          <Col xs={10} md={8} className="mt-4">
             <Profile />
+            <Analisi />
           </Col>
           <Col>
             <Aside />
