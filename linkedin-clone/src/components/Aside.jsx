@@ -112,13 +112,6 @@ const Aside = () => {
               </div>
             </Col>
           </Row>
-          <Row className="gx-0 px-0">
-            <img
-              src="https://media.licdn.com/media/AAYQAgTPAAgAAQAAAAAAADVuOvKzTF-3RD6j-qFPqhubBQ.png"
-              alt="immagine linkedin"
-              className=" rounded border border-seondary-light my-2"
-            />
-          </Row>
         </div>
       </Col>
     </Row>
