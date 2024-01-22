@@ -46,7 +46,7 @@
 }
 .mercado-match:hover {
   color: black;
-  fill: black;
+  fill: rgb(31, 17, 17);
   cursor: pointer;
 }
 
