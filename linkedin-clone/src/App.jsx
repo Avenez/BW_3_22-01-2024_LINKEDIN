@@ -1,6 +1,6 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Aside from "./components/Main";
+import Aside from "./components/Aside";
 
 function App() {
   return (
