@@ -1,5 +1,7 @@
 /* -------------GENERAL--------- */
-
+.App {
+  background-color: #f3f2ee;
+}
 .cursor {
   cursor: pointer;
 }
@@ -33,11 +35,11 @@
   height: 130px;
 }
 .icon {
-  width: 40px;
-  height: 40px;
+  width: 37px;
+  height: 37px;
 }
 .myform {
-  width: 200px;
+  padding-right: ;
 }
 .iconSpace,
 .mercado-match {
@@ -45,7 +47,17 @@
   color: #666666;
   font-size: small;
 }
+.netNav {
+  border-left: solid 1px #666666;
+}
 
+.inputNav {
+  width: 250px;
+  height: 35px;
+  border-radius: 5px;
+  border-style: none;
+  background-color: #eff3f8;
+}
 .user:hover {
   cursor: pointer;
 }

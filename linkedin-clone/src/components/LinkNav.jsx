@@ -15,13 +15,13 @@ import Navbar from "react-bootstrap/Navbar";
 
 function LinkNav() {
   return (
-    <Navbar className="bg-white sticky-top pt-0">
+    <Navbar className="bg-white sticky-top py-0">
       <Container className="">
-        <LinkedIn_icon className="icon" />
-        <Form className=" ps-3 ">
-          <Form.Control type="search" placeholder="Cerca" className="myform" aria-label="Search" />
-        </Form>
-        <Container className="d-flex justify-content-center ">
+        <div className>
+          <LinkedIn_icon className="icon me-3 py-0" />
+          <input type="text" id="lname" name="lname" placeholder="Cerca" className="inputNav py-0" />
+        </div>
+        <div className="d-flex">
           <LogoHome />
           <LogoNet />
           <LogoJob />
@@ -29,7 +29,7 @@ function LinkNav() {
           <LogoNews />
           <UserNavbar />
           <LogoEmpl />
-        </Container>
+        </div>
 
         <a href="#login">Prova Premium per 0 EUR</a>
       </Container>
