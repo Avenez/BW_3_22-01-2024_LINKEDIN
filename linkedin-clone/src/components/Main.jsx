@@ -1,5 +1,6 @@
 import { Col, Container, Row } from "react-bootstrap";
 import Profile from "./Profile";
+import Aside from "./Aside";
 
 const Main = () => {
   return (
@@ -9,7 +10,9 @@ const Main = () => {
           <Col xs={10} md={8}>
             <Profile />
           </Col>
-          <Col></Col>
+          <Col>
+            <Aside />
+          </Col>
         </Row>
       </Container>
     </>
