@@ -2,7 +2,7 @@ import React from "react";
 
 const LogoNews = () => {
   return (
-    <div className="d-flex flex-column align-items-center">
+    <div className="d-flex flex-column align-items-center bord">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"

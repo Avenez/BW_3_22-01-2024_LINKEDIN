@@ -37,7 +37,7 @@
   height: 40px;
 }
 .myform {
-  padding-right: 100px;
+  width: 200px;
 }
 .iconSpace,
 .mercado-match {
@@ -46,18 +46,27 @@
   font-size: small;
 }
 
+.user:hover {
+  cursor: pointer;
+}
+
+.bord:hover {
+  border-bottom: solid 2px black;
+}
+.mercado-match:hover {
+  color: black;
+  fill: rgb(31, 17, 17);
+  cursor: pointer;
+}
+
 .resized-avatar {
   width: 30px;
   height: 30px;
 }
 
 .allContainer {
-  max-width: 1155px;
   display: flex;
   justify-content: center;
-}
-.form {
-  background-color: #61dafb;
 }
 
 .Verify {

@@ -2,7 +2,7 @@ import React from "react";
 
 const UserNavbar = (props) => {
   return (
-    <div className="d-flex flex-column  align-items-center">
+    <div className="d-flex flex-column  align-items-center  bord user">
       <img
         className="rounded-circle shadow-4-strong resized-avatar"
         alt="avatar2"
