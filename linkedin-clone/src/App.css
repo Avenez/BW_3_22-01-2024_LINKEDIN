@@ -5,7 +5,12 @@
 h5 {
   margin-bottom: 0px;
 }
-
+.plus {
+  width: 30px;
+  height: 30px;
+  fill: #666666;
+  cursor: pointer;
+}
 .cursor {
   cursor: pointer;
 }
@@ -97,6 +102,10 @@ h5 {
   background-color: #f4f2ee;
 }
 
+.sizeIconEx {
+  width: 62px;
+  height: 62px;
+}
 .colorGray {
   color: rgb(114, 113, 113);
   font-size: 14px;

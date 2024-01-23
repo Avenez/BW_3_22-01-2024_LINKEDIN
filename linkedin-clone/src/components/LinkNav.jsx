@@ -18,7 +18,7 @@ function LinkNav() {
     <Navbar className="bg-white sticky-top py-0 mb-3">
       <Container className="">
         <div className>
-          <LinkedIn_icon className="icon me-3 py-0" />
+          <LinkedIn_icon className="icon me-3 py-0 cursor" />
           <input type="text" id="lname" name="lname" placeholder="Cerca" className="inputNav py-0" />
         </div>
         <div className="d-flex justify-content-end align-items-center">
