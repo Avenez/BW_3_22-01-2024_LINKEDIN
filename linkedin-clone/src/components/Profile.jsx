@@ -1,8 +1,20 @@
 import { Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import ModalProfile from "./ModalProfile";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { profileFetch, experiencesFetch } from "../redux/action/profile";
 
 const Profile = () => {
+  const profile = useSelector((state) => state.profile);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(profileFetch());
+    dispatch(experiencesFetch(profile._id));
+  }, [dispatch]);
+
   return (
     <>
       <Row className="profileContainer">
@@ -21,11 +33,7 @@ const Profile = () => {
               <div className="">
                 <input type="file" id="profileImage" hidden />
                 <label htmlFor="profileImage">
-                  <img
-                    className="photoProfile cursor"
-                    src="https://st3.depositphotos.com/6672868/13701/v/450/depositphotos_137014128-stock-illustration-user-profile-icon.jpg"
-                    alt="profilePicture"
-                  />
+                  <img className="photoProfile cursor" src={profile.image} alt="profilePicture" />
                 </label>
               </div>
             </div>
@@ -35,9 +43,6 @@ const Profile = () => {
             <Col>
               <Row className=" justify-content-end  ">
                 <Col xs={2}>
-                  {/* <button className="outlineButtonsProfileGrey rounded-circle ">
-                    <i className="bi bi-pencil fs-5"></i>
-                  </button> */}
                   <ModalProfile />
                 </Col>
               </Row>
@@ -48,7 +53,7 @@ const Profile = () => {
               <Col xs={12} md={8}>
                 <Row className="mt-4 text-start">
                   <Col className="d-md-flex ">
-                    <h2 className="me-2">ProfileName</h2>
+                    <h2 className="me-2">{`${profile.name} ${profile.surname}`}</h2>
                     <button className="d-flex align-items-center outlineButtons px-2  rounded-5  fw-bold fw-bolder py-0  ">
                       <i class="bi bi-shield-check me-1"></i>
                       <p className="Verify mb-0 p-0  ">Inizia la verifica</p>
@@ -57,19 +62,19 @@ const Profile = () => {
                 </Row>
                 <Row className=" text-start">
                   <Col xs={10}>
-                    <p className="mb-2">Actual Job</p>
+                    <p className="mb-2">{profile.title}</p>
                   </Col>
                 </Row>
 
                 <Row className="d-sm-inline-block d-md-none text-start text-secondary mt-0 ">
-                  <Col>
+                  {/* <Col>
                     <p className="mb-2">Job &bull; Study</p>
-                  </Col>
+                  </Col> */}
                 </Row>
                 <Row className=" text-start text-secondary mt-0 ">
                   <Col className="d-flex">
-                    <p className="mb-2">City &bull;</p>{" "}
-                    <Link className="ms-2 link-primary links   ">Informazioni di contatto</Link>
+                    <p className="mb-2">{profile.area} &bull;</p>{" "}
+                    <Link className="ms-2 link-primary links   ">{profile.email}</Link>
                   </Col>
                 </Row>
                 <Row className=" text-start text-secondary mt-0 ">

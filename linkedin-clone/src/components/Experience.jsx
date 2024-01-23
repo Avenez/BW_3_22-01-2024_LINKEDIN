@@ -2,8 +2,11 @@ import React from "react";
 import { Row, Col, Container } from "react-bootstrap";
 import Eyes from "../images/icon_Main/Eyes";
 import { PlusLg } from "react-bootstrap-icons";
+import { useSelector } from "react-redux";
 
 const Experiences = () => {
+  const profile = useSelector((state) => state.profile);
+
   return (
     <>
       <Row className="profileContainer d-flex mt-2">
@@ -30,41 +33,48 @@ const Experiences = () => {
             </Col>
           </Row>
 
-          <Row>
-            <Row>
-              <Col xs={12}>
-                <Container className="d-flex">
-                  <Col xs={1}>
-                    <img
-                      className="sizeIconEx"
-                      src="https://static.wixstatic.com/media/61a791_04fd491499d5492bb7d710db50ad367f~mv2.png/v1/fit/w_2500,h_1330,al_c/61a791_04fd491499d5492bb7d710db50ad367f~mv2.png"
-                      alt="icona_lavoro"
-                    />
+          {/* ---------------------------------------------- */}
+
+          {profile.experiences.map((experience) => (
+            <>
+              <Row>
+                <Row>
+                  <Col xs={12}>
+                    <Container className="d-flex">
+                      <Col xs={1}>
+                        <img
+                          className="sizeIconEx"
+                          src="https://static.wixstatic.com/media/61a791_04fd491499d5492bb7d710db50ad367f~mv2.png/v1/fit/w_2500,h_1330,al_c/61a791_04fd491499d5492bb7d710db50ad367f~mv2.png"
+                          alt="icona_lavoro"
+                        />
+                      </Col>
+                      <Col xs={10}>
+                        <span className="ps-0">
+                          <b>{experience.company} </b>
+                          <b>- {experience.role}</b>
+                        </span>
+                        <p className="colorGray mb-0">
+                          {" "}
+                          {new Date(experience.startDate).toISOString().slice(0, 7).toLocaleString("it")}
+                        </p>
+                        <p className="colorGray">{experience.area}</p>
+                        <p>{profile.description}</p>
+                      </Col>
+                    </Container>
                   </Col>
-                  <Col xs={10}>
-                    <span className="ps-0">
-                      <b>Laboratorio creativo </b>
-                      <b>- Artista</b>
-                    </span>
-                    <p className="colorGray mb-0">giu 2021 · 1 mese</p>
-                    <p className="colorGray">Milano</p>
-                    <p>
-                      Lorem ipsum, dolor sit amet consectetur adipisicing elit. A, quaerat modi dolores laudantium,
-                      corporis neque voluptatibus, autem delectus perspiciatis dicta pariatur excepturi eos quam ipsam
-                      saepe! Odio sit rerum dolores?
-                    </p>
-                  </Col>
-                </Container>
-              </Col>
-            </Row>
-          </Row>
-          <Row>
-            <Col
-              xs={12}
-              className=" d-flex justify-content-center"
-              style={{ borderTop: "1px solid rgb(206, 199, 199)" }}
-            ></Col>
-          </Row>
+                </Row>
+              </Row>
+              <Row>
+                <Col
+                  xs={12}
+                  className=" d-flex justify-content-center"
+                  style={{ borderTop: "1px solid rgb(206, 199, 199)" }}
+                ></Col>
+              </Row>
+            </>
+          ))}
+
+          {/* ---------------------------- */}
         </Col>
       </Row>
     </>
