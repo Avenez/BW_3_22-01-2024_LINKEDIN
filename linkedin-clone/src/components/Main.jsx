@@ -6,7 +6,7 @@ import Attività from "./Attività";
 import Info from "./Info";
 import Experiences from "./Experience";
 
-const User = () => {
+const Main = () => {
   return (
     <>
       <Container>
@@ -27,4 +27,4 @@ const User = () => {
   );
 };
 
-export default User;
+export default Main;
