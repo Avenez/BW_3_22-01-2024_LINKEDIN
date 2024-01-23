@@ -1,6 +1,7 @@
 import { Col, Container, Row } from "react-bootstrap";
 import Profile from "./Profile";
 import Aside from "./Aside";
+import ProfileFooter from "./ProfileFooter";
 
 const Main = () => {
   return (
@@ -15,6 +16,7 @@ const Main = () => {
           </Col>
         </Row>
       </Container>
+      <ProfileFooter />
     </>
   );
 };
