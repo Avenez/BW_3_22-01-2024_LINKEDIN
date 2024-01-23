@@ -1,5 +1,7 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
+import { ReactComponent as LinkedIn_icon } from "../images/LinkedIn_icon.svg";
+import AsideFriends from "./AsideFriends";
 
 const Aside = () => {
   return (
@@ -57,11 +59,53 @@ const Aside = () => {
           <Row>
             <Col>
               <div className="bg-white mt-2 rounded border border-seondary-light">
-                <h5 className="mx-2 mt-3 ">Altri profili consultati </h5>
-                <div className="d-flex">
-                  <img src="" alt="immagine profilo utente" />
-                  <p>Occupazione(title)</p>
+                <AsideFriends />
+              </div>
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <div className="bg-white mt-2 rounded border border-seondary-light">
+                <div className="d-flex align-items-center ms-2 mt-2 ">
+                  <LinkedIn_icon style={{ width: "20px", height: "20px" }} />
+                  <h6 className="ms-2">LEARNING</h6>
                 </div>
+                <p className="mx-2">Aggiungi nuove competenze con questi corsi, gratuiti per 24 ore</p>
+                <div className="d-flex">
+                  <a href="#">
+                    <img
+                      src="https://media.licdn.com/dms/image/C560DAQHW0jBDP9jf_w/learning-public-crop_60_100/0/1636401127307?e=1706536800&amp;v=beta&amp;t=kNO_m59SqZsiDeENIpJ3Qydpjqk9lq-vLyDF17ZZ1E4"
+                      loading="lazy"
+                      alt=""
+                      id="ember1271"
+                      className="mx-2"
+                    ></img>
+                  </a>
+                  <span className="fw-bold">Elementi essenziali per riunoni virtuali e ibride</span>
+                </div>
+                <div className="d-flex">
+                  <a href="#">
+                    <img
+                      src="https://media.licdn.com/dms/image/C560DAQGy15jUxtIRsw/learning-public-crop_60_100/0/1636399971907?e=1706536800&amp;v=beta&amp;t=gk2xU_1BHPj3R3hBWfiqofUuhtPuRNieyx6ZDuuUlzY"
+                      loading="lazy"
+                      alt=""
+                      className="mx-2 my-2"
+                    ></img>
+                  </a>
+                  <span className="fw-bold">Essere un dipendente ibrido o virtuale efficace</span>
+                </div>
+                <div className="d-flex">
+                  <a href="#">
+                    <img
+                      src="https://media.licdn.com/dms/image/C4E0DAQE7fOlRlDJuvA/learning-public-crop_60_100/0/1568057823406?e=1706536800&amp;v=beta&amp;t=cEl0fstPv0_IsAmml3VfLsrl5i00QXzlyP4WLgPtBe8"
+                      loading="lazy"
+                      alt=""
+                      className="mx-2 mb-2"
+                    />
+                  </a>
+                  <span className="fw-bold">Creare conversazioni positive con clienti...</span>
+                </div>
+                <p className="text-center text-secondary my-2">Visualizza i miei suggermenti</p>
               </div>
             </Col>
           </Row>
