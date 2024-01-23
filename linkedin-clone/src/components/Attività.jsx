@@ -2,7 +2,7 @@ import React from "react";
 import { Row, Col, Container } from "react-bootstrap";
 import Eyes from "../images/icon_Main/Eyes";
 
-const Risorse = () => {
+const Attività = () => {
   return (
     <>
       <Row className="profileContainer d-flex mt-2">
@@ -10,7 +10,7 @@ const Risorse = () => {
           <Row className="ms-1">
             <Col>
               <h5 className="mt-4" style={{ lineHeight: 0.8 }}>
-                Risorse
+                Attività
               </h5>
               <Eyes />
               <span className="colorGray">Solo per te</span>
@@ -46,4 +46,4 @@ const Risorse = () => {
   );
 };
 
-export default Risorse;
+export default Attività;
