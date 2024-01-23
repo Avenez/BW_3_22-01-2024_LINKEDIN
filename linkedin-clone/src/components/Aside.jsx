@@ -1,6 +1,7 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import { ReactComponent as LinkedIn_icon } from "../images/LinkedIn_icon.svg";
+import AsideFriends from "./AsideFriends";
 
 const Aside = () => {
   return (
@@ -58,11 +59,7 @@ const Aside = () => {
           <Row>
             <Col>
               <div className="bg-white mt-2 rounded border border-seondary-light">
-                <h5 className="mx-2 mt-3 ">Altri profili consultati </h5>
-                <div className="d-flex">
-                  <img src="" alt="immagine profilo utente" />
-                  <p>Occupazione(title)</p>
-                </div>
+                <AsideFriends />
               </div>
             </Col>
           </Row>
