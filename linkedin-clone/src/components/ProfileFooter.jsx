@@ -3,35 +3,39 @@ import { QuestionCircleFill, GearFill, ShieldShaded, CaretDownFill } from "react
 
 const ProfileFooter = () => {
   return (
-    <Container className="my-3" style={{ color: "#666666" }}>
+    <Container className="my-3">
       <Row>
         <Col lg={2}>
           <ListGroup>
-            <ListGroup.Item className="bg-transparent border-0 small py-1">Informazioni</ListGroup.Item>
-            <ListGroup.Item className="bg-transparent border-0 small py-1">Linee Guida della community</ListGroup.Item>
-            <ListGroup.Item className="bg-transparent border-0 small py-3">
+            <ListGroup.Item className="bg-transparent border-0 small py-1 text-muted">Informazioni</ListGroup.Item>
+            <ListGroup.Item className="bg-transparent border-0 small py-1 text-muted">
+              Linee Guida della community
+            </ListGroup.Item>
+            <ListGroup.Item className="bg-transparent border-0 small py-3 text-muted">
               Privacy e condizioni <CaretDownFill />
             </ListGroup.Item>
-            <ListGroup.Item className="bg-transparent border-0 small py-1">Informazioni</ListGroup.Item>
-            <ListGroup.Item className="bg-transparent border-0 small py-1">Centro sicurezza</ListGroup.Item>
+            <ListGroup.Item className="bg-transparent border-0 small py-1 text-muted">Informazioni</ListGroup.Item>
+            <ListGroup.Item className="bg-transparent border-0 small py-1 text-muted">Centro sicurezza</ListGroup.Item>
           </ListGroup>
         </Col>
         <Col lg={2}>
           <ListGroup>
-            <ListGroup.Item className="bg-transparent border-0 small py-1">Accessibilità</ListGroup.Item>
-            <ListGroup.Item className="bg-transparent border-0 small py-1">Carriera</ListGroup.Item>
-            <ListGroup.Item className="bg-transparent border-0 small py-3">
+            <ListGroup.Item className="bg-transparent border-0 small py-1 text-muted">Accessibilità</ListGroup.Item>
+            <ListGroup.Item className="bg-transparent border-0 small py-1 text-muted">Carriera</ListGroup.Item>
+            <ListGroup.Item className="bg-transparent border-0 small py-3 text-muted">
               Opzioni per gli annunci pubblicitari
             </ListGroup.Item>
-            <ListGroup.Item className="bg-transparent border-0 small py-1">Mobile</ListGroup.Item>
+            <ListGroup.Item className="bg-transparent border-0 small py-1 text-muted">Mobile</ListGroup.Item>
           </ListGroup>
         </Col>
         <Col lg={2}>
           <ListGroup>
-            <ListGroup.Item className="bg-transparent border-0 small py-1">Talent Solutions</ListGroup.Item>
-            <ListGroup.Item className="bg-transparent border-0 small py-1">Soluzioni di marketing</ListGroup.Item>
-            <ListGroup.Item className="bg-transparent border-0 small py-3">Pubblicità</ListGroup.Item>
-            <ListGroup.Item className="bg-transparent border-0 small py-1">Piccole Imprese</ListGroup.Item>
+            <ListGroup.Item className="bg-transparent border-0 small py-1 text-muted">Talent Solutions</ListGroup.Item>
+            <ListGroup.Item className="bg-transparent border-0 small py-1 text-muted">
+              Soluzioni di marketing
+            </ListGroup.Item>
+            <ListGroup.Item className="bg-transparent border-0 small py-3 text-muted">Pubblicità</ListGroup.Item>
+            <ListGroup.Item className="bg-transparent border-0 small py-1 text-muted">Piccole Imprese</ListGroup.Item>
           </ListGroup>
         </Col>
         <Col lg={3} className="ps-0">
