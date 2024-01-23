@@ -1,20 +1,19 @@
 import React from "react";
 import { Row, Col, Container } from "react-bootstrap";
 import Eyes from "../images/icon_Main/Eyes";
-import LogoNet from "../images/Icon_Nav/LogoNet";
 
 const Analisi = () => {
   return (
     <>
-      <Row className="profileContainer d-flex">
-        <Col xs={12} className="ms-3">
-          <Row>
+      <Row className="profileContainer d-flex mt-2">
+        <Col xs={12} className="">
+          <Row className="ms-1">
             <Col>
               <h5 className="mt-4" style={{ lineHeight: 0.8 }}>
                 Analisi
               </h5>
               <Eyes />
-              <span>Lorem</span>
+              <span className="colorGray">Solo per te</span>
             </Col>
           </Row>
 
@@ -92,7 +91,11 @@ const Analisi = () => {
             </Row>
           </Row>
           <Row>
-            <Col xs={12} className="ms-3 d-flex justify-content-center">
+            <Col
+              xs={12}
+              className=" d-flex justify-content-center"
+              style={{ borderTop: "1px solid rgb(206, 199, 199)" }}
+            >
               <p>Mostra tutte le analisi</p>
             </Col>
           </Row>
