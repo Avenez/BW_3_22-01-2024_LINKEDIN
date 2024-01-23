@@ -5,6 +5,7 @@ import Aside from "./Aside";
 import Attività from "./Attività";
 import Info from "./Info";
 import Experiences from "./Experience";
+import ProfileFooter from "./ProfileFooter";
 
 const Main = () => {
   return (
@@ -23,6 +24,7 @@ const Main = () => {
           </Col>
         </Row>
       </Container>
+      <ProfileFooter />
     </>
   );
 };
