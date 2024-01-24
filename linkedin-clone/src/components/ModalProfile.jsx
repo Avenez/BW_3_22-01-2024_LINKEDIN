@@ -171,7 +171,11 @@ const ModalProfile = () => {
           </div>
         </Modal.Body>
         <Modal.Footer>
-          <Button style={{ backgroundColor: "#0a66c2" }} className="rounded-pill px-3" onClick={handleUpdateProfile}>
+          <Button
+            style={{ backgroundColor: "#0a66c2" }}
+            className="rounded-pill px-3"
+            onClick={() => handleUpdateProfile()}
+          >
             Salva
           </Button>
         </Modal.Footer>
