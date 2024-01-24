@@ -7,13 +7,13 @@ import { profileFetch, experiencesFetch } from "../redux/action/profile";
 
 const Profile = () => {
   const profile = useSelector((state) => state.profile);
-
+  const id = "6551e7bbc55e7e0018f83bfb";
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(profileFetch());
-    dispatch(experiencesFetch(profile._id));
-  }, [dispatch]);
+    dispatch(profileFetch(id));
+    dispatch(experiencesFetch(id));
+  }, []);
 
   return (
     <>

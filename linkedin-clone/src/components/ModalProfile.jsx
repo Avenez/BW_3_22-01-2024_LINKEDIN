@@ -3,12 +3,22 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import { Pencil, InfoSquareFill, Plus } from "react-bootstrap-icons";
+import { useDispatch, useSelector } from "react-redux";
+import { setProfile, updateProfile } from "../redux/action/profile";
 
 const ModalProfile = () => {
+  const profile = useSelector((state) => state.profile);
+  const dispatch = useDispatch();
+
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const handleUpdateProfile = () => {
+    dispatch(updateProfile(profile.id, profile));
+    handleClose();
+  };
 
   return (
     <>
@@ -31,15 +41,36 @@ const ModalProfile = () => {
           <Form>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label className="">Nome*</Form.Label>
-              <Form.Control type="text" placeholder="" className="border border-dark" autoFocus required />
+              <Form.Control
+                type="text"
+                placeholder=""
+                className="border border-dark"
+                autoFocus
+                required
+                value={profile.name}
+                onChange={(event) => dispatch(setProfile(event.target.value))}
+              />
             </Form.Group>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label className="">Cognome*</Form.Label>
-              <Form.Control type="text" placeholder="" className="border border-dark" required />
+              <Form.Control
+                type="text"
+                placeholder=""
+                className="border border-dark"
+                required
+                value={profile.surname}
+                onChange={(event) => dispatch(setProfile(event.target.value))}
+              />
             </Form.Group>
             <Form.Group className="mb-4" controlId="exampleForm.ControlInput1">
               <Form.Label className="">Nome aggiuntivo</Form.Label>
-              <Form.Control type="text" placeholder="" className="border border-dark" />
+              <Form.Control
+                type="text"
+                placeholder=""
+                className="border border-dark"
+                value={profile.username}
+                onChange={(event) => dispatch(setProfile(event.target.value))}
+              />
             </Form.Group>
             <p className="pt-2 mb-2 ">Pronuncia del nome</p>
             <p style={{ color: "#56687a" }}>
@@ -110,7 +141,14 @@ const ModalProfile = () => {
           <h4 className="text-dark">Località</h4>
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
             <Form.Label className="">Paese/Area geografica*</Form.Label>
-            <Form.Control type="text" placeholder="" className="border border-dark" required />
+            <Form.Control
+              type="text"
+              placeholder=""
+              className="border border-dark"
+              required
+              value={profile.area}
+              onChange={(event) => dispatch(setProfile(event.target.value))}
+            />
           </Form.Group>
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
             <Form.Label className="">CAP</Form.Label>
@@ -133,7 +171,7 @@ const ModalProfile = () => {
           </div>
         </Modal.Body>
         <Modal.Footer>
-          <Button style={{ backgroundColor: "#0a66c2" }} onClick={handleClose} className="rounded-pill px-3">
+          <Button style={{ backgroundColor: "#0a66c2" }} className="rounded-pill px-3" onClick={handleUpdateProfile}>
             Salva
           </Button>
         </Modal.Footer>
