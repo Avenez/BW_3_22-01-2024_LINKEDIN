@@ -58,7 +58,8 @@ const Aside = () => {
           </Row>
           <Row>
             <Col>
-              <div className="bg-white mt-2 rounded border border-seondary-light">
+              <div className="bg-white mt-2 rounded border border-seondary-light p-4">
+                <h6 className="mb-4">Profili consultati</h6>
                 <AsideFriends />
               </div>
             </Col>

@@ -15,7 +15,7 @@ import Navbar from "react-bootstrap/Navbar";
 
 function LinkNav() {
   return (
-    <Navbar className="bg-white sticky-top py-0 mb-3">
+    <Navbar className="bg-white sticky-top py-0 pt-1  mb-3 ">
       <Container className="">
         <div className>
           <LinkedIn_icon className="icon me-3 py-0 cursor" />

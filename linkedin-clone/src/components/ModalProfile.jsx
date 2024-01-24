@@ -17,15 +17,9 @@ const ModalProfile = (props) => {
 
   return (
     <>
-      <Button
-        variant="white"
-        onClick={handleShow}
-        className="outlineButtonsProfileGrey rounded-circle"
-        onMouseOver={(e) => (e.target.style.backgroundColor = "#ebebeb")}
-        onMouseOut={(e) => (e.target.style.backgroundColor = "white")}
-      >
-        <Pencil className="fs-4"></Pencil>
-      </Button>
+      <button className=" d-flex justify-content-center align-items-center p-3 border-0 cursor outlineButtonsProfileGrey rounded-circle fs-4">
+        <Pencil className="" onClick={handleShow}></Pencil>
+      </button>
 
       <Modal show={show} onHide={handleClose} className="text-secondary" centered>
         <Modal.Header closeButton>
