@@ -5,6 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LinkNav from "./components/LinkNav";
 import Main from "./components/Main";
+import Home from "./components/Home";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <LinkNav />
         <Routes>
           <Route path="" element={<Main />} />
+          <Route path="/home" element={<Home />} />
         </Routes>
       </BrowserRouter>
     </div>

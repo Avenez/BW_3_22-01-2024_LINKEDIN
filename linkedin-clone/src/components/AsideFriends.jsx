@@ -12,10 +12,12 @@ const AsideFriends = () => {
   // const dispatch = useDispatch()
   return resultsSlice.map((user) => (
     <>
-      <h5 className="mx-2 mt-3 ">{`${user.name} ${user.surname}`}</h5>
-      <div className="d-flex">
-        <img src={user.image} className="icon" alt="immagine profilo utente" />
-        <p>{user.title}</p>
+      <div className="d-flex align-items-center">
+        <img src={user.image} className="icon mx-2 rounded-pill" alt="immagine profilo utente" />
+        <div>
+          <h6 className="mx-2 mt-3 ">{`${user.name} ${user.surname}`}</h6>
+          <p className="mx-2">{user.title}</p>
+        </div>
       </div>
     </>
   ));
