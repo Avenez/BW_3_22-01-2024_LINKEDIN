@@ -1,10 +1,11 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import { PlusLg } from "react-bootstrap-icons";
 import { useState } from "react";
 import { Form, Row, Col } from "react-bootstrap";
 
-const ModalExperiences = () => {
+const ModalExperiencesAdd = () => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -13,21 +14,11 @@ const ModalExperiences = () => {
   return (
     <div className="modal show" style={{ display: "block", position: "initial" }}>
       <Button variant="white" onClick={handleShow}>
-        <svg
-          className="me-3 cursor"
-          xmlns="http://www.w3.org/2000/svg"
-          width="20"
-          height="20"
-          fill="currentColor"
-          class="bi bi-pencil "
-          viewBox="0 0 16 16"
-        >
-          <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325"></path>
-        </svg>
+        <PlusLg className="plus " />
       </Button>
       <Modal show={show} onHide={handleClose} size="lg">
         <Modal.Header closeButton>
-          <Modal.Title className="text-dark">Modifica Esperienza</Modal.Title>
+          <Modal.Title className="text-dark">Aggiungi Esperienza</Modal.Title>
         </Modal.Header>
         <Modal.Body className="pt-1">
           <p className="fs-6 mt-0 ">*Indica che è obbligatorio</p>
@@ -145,11 +136,8 @@ const ModalExperiences = () => {
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button onClick={handleClose} className="rounded-pill px-3 " variant="danger">
-            Elimina
-          </Button>
           <Button style={{ backgroundColor: "#0a66c2" }} onClick={handleClose} className="rounded-pill px-3">
-            Salva
+            Aggiungi
           </Button>
         </Modal.Footer>
       </Modal>
@@ -157,4 +145,4 @@ const ModalExperiences = () => {
   );
 };
 
-export default ModalExperiences;
+export default ModalExperiencesAdd;
