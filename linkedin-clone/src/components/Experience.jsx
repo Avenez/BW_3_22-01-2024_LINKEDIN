@@ -1,8 +1,9 @@
 import React from "react";
-import { Row, Col, Container } from "react-bootstrap";
-import Eyes from "../images/icon_Main/Eyes";
-import { PlusLg } from "react-bootstrap-icons";
+import { Row, Col, Container, Button } from "react-bootstrap";
+
 import { useSelector } from "react-redux";
+import ModalExperiences from "./ModalExperiences";
+import ModalExperiencesAdd from "./ModalExperiencesAdd";
 
 const Experiences = (props) => {
   const profile = useSelector((state) => state.profile);
@@ -34,6 +35,11 @@ const Experiences = (props) => {
                   </svg>
                 </div>
               )}
+              <div>
+                <ModalExperiencesAdd />
+                {/* qui ci va il Botton */}
+                <ModalExperiences />
+              </div>
             </Col>
           </Row>
 
