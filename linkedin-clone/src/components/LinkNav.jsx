@@ -9,7 +9,6 @@ import UserNavbar from "../images/UserNavbar";
 import LogoNews from "../images/Icon_Nav/LogoNews";
 import LogoEmpl from "../images/Icon_Nav/LogoEmpl";
 import Container from "react-bootstrap/Container";
-import Form from "react-bootstrap/Form";
 
 import Navbar from "react-bootstrap/Navbar";
 import { useNavigate } from "react-router";
@@ -20,8 +19,8 @@ function LinkNav() {
   return (
     <Navbar className="bg-white sticky-top py-0 pt-1  mb-3 ">
       <Container className="">
-        <div className>
-          <LinkedIn_icon className="icon me-3 py-0 cursor" />
+        <div className="d-flex">
+          <LinkedIn_icon className="icon me-3  cursor " />
           <input type="text" id="lname" name="lname" placeholder="Cerca" className="inputNav py-0" />
         </div>
         <div className="d-flex justify-content-end align-items-center">
