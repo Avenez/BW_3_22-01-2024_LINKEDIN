@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LinkNav from "./components/LinkNav";
 import Main from "./components/Main";
 import OtherProfile from "./components/OtherProfile";
+import Jobs from "./components/Jobs";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <LinkNav />
         <Routes>
           <Route path="/" element={<Main />} />
+          <Route path="/jobs" element={<Jobs />} />
           <Route path="/profile/:userId" element={<OtherProfile />} />
         </Routes>
       </BrowserRouter>

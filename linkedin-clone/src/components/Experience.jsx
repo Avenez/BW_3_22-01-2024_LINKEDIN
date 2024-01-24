@@ -34,7 +34,6 @@ const Experiences = (props) => {
             {profile.experiences.map((experience) => (
               <>
                 <Row className="mt-2">
-                  {/* <Col xs={1}></Col> */}
                   <Col xs={11}>
                     <Container className="d-flex border-bottom">
                       <Col xs={2} xl={1} className="me-2">
@@ -56,13 +55,6 @@ const Experiences = (props) => {
                     </Container>
                   </Col>
                 </Row>
-                {/* <Row>
-                <Col
-                xs={12}
-                className=" d-flex justify-content-center"
-                style={{ borderTop: "1px solid rgb(206, 199, 199)" }}
-                ></Col>
-              </Row> */}
               </>
             ))}
           </Row>

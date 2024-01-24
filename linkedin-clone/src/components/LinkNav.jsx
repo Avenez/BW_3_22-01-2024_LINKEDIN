@@ -12,8 +12,11 @@ import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 
 import Navbar from "react-bootstrap/Navbar";
+import { useNavigate } from "react-router";
 
 function LinkNav() {
+  const navigate = useNavigate();
+
   return (
     <Navbar className="bg-white sticky-top py-0 pt-1  mb-3 ">
       <Container className="">
