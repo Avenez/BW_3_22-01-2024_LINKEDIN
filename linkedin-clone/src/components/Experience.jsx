@@ -58,7 +58,7 @@ const Experiences = () => {
                           {new Date(experience.startDate).toISOString().slice(0, 7).toLocaleString("it")}
                         </p>
                         <p className="colorGray">{experience.area}</p>
-                        <p>{profile.description}</p>
+                        <p>{experience.description}</p>
                       </Col>
                     </Container>
                   </Col>

@@ -4,9 +4,9 @@ import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import { Pencil, InfoSquareFill, Plus } from "react-bootstrap-icons";
 import { useDispatch, useSelector } from "react-redux";
-import { setProfile, updateProfile } from "../redux/action/profile";
+import { updateProfile } from "../redux/action/profile";
 
-const ModalProfile = () => {
+const ModalProfile = (props) => {
   const profile = useSelector((state) => state.profile);
   const dispatch = useDispatch();
 
@@ -14,11 +14,6 @@ const ModalProfile = () => {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
-  const handleUpdateProfile = () => {
-    dispatch(updateProfile(profile.id, profile));
-    handleClose();
-  };
 
   return (
     <>
@@ -47,8 +42,8 @@ const ModalProfile = () => {
                 className="border border-dark"
                 autoFocus
                 required
-                value={profile.name}
-                onChange={(event) => dispatch(setProfile(event.target.value))}
+                value={props.localProfile.name}
+                onChange={(event) => props.setLocalProfile({ ...props.localProfile, name: event.target.value })}
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
@@ -58,8 +53,8 @@ const ModalProfile = () => {
                 placeholder=""
                 className="border border-dark"
                 required
-                value={profile.surname}
-                onChange={(event) => dispatch(setProfile(event.target.value))}
+                value={props.localProfile.surname || profile.surname}
+                onChange={(event) => props.setLocalProfile({ ...props.localProfile, surname: event.target.value })}
               />
             </Form.Group>
             <Form.Group className="mb-4" controlId="exampleForm.ControlInput1">
@@ -68,8 +63,8 @@ const ModalProfile = () => {
                 type="text"
                 placeholder=""
                 className="border border-dark"
-                value={profile.username}
-                onChange={(event) => dispatch(setProfile(event.target.value))}
+                value={props.localProfile.username || profile.username}
+                onChange={(event) => props.setLocalProfile({ ...props.localProfile, username: event.target.value })}
               />
             </Form.Group>
             <p className="pt-2 mb-2 ">Pronuncia del nome</p>
@@ -89,7 +84,14 @@ const ModalProfile = () => {
             </p>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label className="">Sommario*</Form.Label>
-              <Form.Control type="text" placeholder="" className="border border-dark" required />
+              <Form.Control
+                type="text"
+                placeholder=""
+                className="border border-dark"
+                required
+                value={props.localProfile.bio || profile.bio}
+                onChange={(event) => props.setLocalProfile({ ...props.localProfile, bio: event.target.value })}
+              />
             </Form.Group>
             <h4 className="text-dark">Posizione attuale</h4>
             <Form.Group controlId="exampleForm.SelectCustom" className="mb-3">
@@ -109,7 +111,14 @@ const ModalProfile = () => {
             <Form.Check type="checkbox" id="custom-checkbox" label="Mostra l'azienda attuale nella mia presentazione" />
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label className="">Settore*</Form.Label>
-              <Form.Control type="text" placeholder="" className="border border-dark" required />
+              <Form.Control
+                type="text"
+                placeholder=""
+                className="border border-dark"
+                required
+                value={props.localProfile.title || profile.title}
+                onChange={(event) => props.setLocalProfile({ ...props.localProfile, title: event.target.value })}
+              />
             </Form.Group>
             <p className="">
               Scopri di più sulle{" "}
@@ -121,7 +130,7 @@ const ModalProfile = () => {
           <h4 className="text-dark">Formazione</h4>
           <Form.Group controlId="exampleForm.SelectCustom" className="mb-3">
             <Form.Label className="">Formazione*</Form.Label>
-            <Form.Select className="border border-dark" custom required>
+            <Form.Select className="border border-dark" custom>
               <option>Elemento 1</option>
               <option>Elemento 2</option>
               <option>Elemento 3</option>
@@ -135,8 +144,8 @@ const ModalProfile = () => {
           </div>
           <Form.Check type="checkbox" id="custom-checkbox" label="Mostra la formazione nella mia presentazione" />
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-            <Form.Label className="">Settore*</Form.Label>
-            <Form.Control type="text" placeholder="" className="border border-dark" required />
+            <Form.Label className="">Settore</Form.Label>
+            <Form.Control type="text" placeholder="" className="border border-dark" />
           </Form.Group>
           <h4 className="text-dark">Località</h4>
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
@@ -146,8 +155,8 @@ const ModalProfile = () => {
               placeholder=""
               className="border border-dark"
               required
-              value={profile.area}
-              onChange={(event) => dispatch(setProfile(event.target.value))}
+              value={props.localProfile.area || profile.area}
+              onChange={(event) => props.setLocalProfile({ ...props.localProfile, area: event.target.value })}
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
@@ -174,7 +183,7 @@ const ModalProfile = () => {
           <Button
             style={{ backgroundColor: "#0a66c2" }}
             className="rounded-pill px-3"
-            onClick={() => handleUpdateProfile()}
+            onClick={() => props.handleUpdateProfile()}
           >
             Salva
           </Button>

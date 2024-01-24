@@ -1,19 +1,49 @@
 import { Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import ModalProfile from "./ModalProfile";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { profileFetch, experiencesFetch } from "../redux/action/profile";
+import { profileFetch, experiencesFetch, updateProfile } from "../redux/action/profile";
 
 const Profile = () => {
   const profile = useSelector((state) => state.profile);
   const id = "6551e7bbc55e7e0018f83bfb";
   const dispatch = useDispatch();
 
+  // --------- Just Update profile
+
+  const [localProfile, setLocalProfile] = useState({
+    name: "",
+    surname: "",
+    email: "",
+    username: "",
+    bio: "",
+    title: "",
+    area: "",
+    image: "", // SERVER GENERATED, modificabile
+    createdAt: "", // SERVER GENERATED
+    updatedAt: "", // SERVER GENERATED
+    __v: "", // SERVER GENERATED
+    _id: "", // SERVER GENERATED
+  });
+
+  const handleUpdateProfile = () => {
+    dispatch(updateProfile(localProfile));
+    console.log(localProfile);
+  };
+
+  // ---------------------------------
+
+  // -------IMAGE
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+  };
+
   useEffect(() => {
     dispatch(profileFetch(id));
     dispatch(experiencesFetch(id));
-  }, []);
+    setLocalProfile(profile);
+  }, [dispatch]);
 
   return (
     <>
@@ -43,7 +73,11 @@ const Profile = () => {
             <Col>
               <Row className=" justify-content-end  ">
                 <Col xs={2}>
-                  <ModalProfile />
+                  <ModalProfile
+                    localProfile={localProfile}
+                    handleUpdateProfile={handleUpdateProfile}
+                    setLocalProfile={setLocalProfile}
+                  />
                 </Col>
               </Row>
             </Col>
