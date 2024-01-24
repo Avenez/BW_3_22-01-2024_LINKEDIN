@@ -170,3 +170,22 @@ h5 {
 }
 
 /* ------------------------------ */
+
+/*----------- HOME ------*/
+.font-home-destra {
+  font-size: 0.7rem;
+}
+.fotoProfiloHome {
+  border-radius: 70px;
+  border: 3px solid white;
+  position: absolute;
+  margin-inline: 33.3%;
+  top: 10%;
+  width: 120px;
+  height: 120px;
+}
+
+.espandi-rete:hover {
+  background-color: lightgrey;
+  cursor: pointer;
+}
