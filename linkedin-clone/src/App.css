@@ -1,5 +1,6 @@
 /* -------------GENERAL--------- */
 .App {
+  background-attachment: fixed;
   background-color: #f3f2ee;
 }
 h5 {
@@ -106,6 +107,7 @@ h5 {
 
 .links:hover {
   color: #0a5ed7;
+  text-decoration: underline;
 }
 
 .profileContainer {
@@ -194,4 +196,30 @@ h5 {
 
 .subText {
   font-size: 14px;
+}
+
+.fontBold {
+  -webkit-text-stroke: 1px;
+}
+
+.borderPx {
+  border: 3px solid grey;
+}
+
+.roundedPx {
+  border: 15px;
+}
+
+.JobsEndButton {
+  cursor: pointer;
+  transition: ease-in-out 0.2s;
+}
+
+.JobsEndButton:hover {
+  background-color: #d1d2d4;
+  transition: ease-in-out 0.2s;
+}
+
+.noBorder:last-child {
+  border: 0px solid;
 }

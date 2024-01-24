@@ -1,31 +1,33 @@
 import { Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-const JobElement = () => {
+const JobElement = (props) => {
   return (
     <>
       <Row className="mt-2">
-        <Col xs={11}>
-          <Container className="d-flex border-bottom">
-            <Col xs={2} xl={1} className="me-2">
+        <Col xs={12}>
+          <Container className="d-flex border-bottom border-bottom cursor p-0 pb-2">
+            <Col xs={2} className="me-2">
               <img
-                className="sizeIconEx rounded-circle"
+                className="sizeIconEx"
                 src="https://t3.ftcdn.net/jpg/02/48/42/64/360_F_248426448_NVKLywWqArG2ADUxDq6QprtIzsF82dMF.jpg"
                 alt="icona_lavoro"
               />
             </Col>
-            <Col xs={10}>
-              <Link className="ps-0 text-decoration-none mb-0">
-                <h6 className="mb-0">Job title</h6>
+            <Col xs={8}>
+              <Link className="ps-0 links mb-0">
+                <h6 className="mb-0 mt-1">{props.job.title}</h6>
               </Link>
-              <p className="mb-0 mt-0">company_name</p>
-              <p className="colorGray">candidate_required_location</p>
-              <div className="d-flex align-items-baseline">
+              <p className="mb-0 mt-0">{props.job.company_name}</p>
+              <p className="colorGray mb-1">{props.job.candidate_required_location}</p>
+              <div className="d-flex align-items-center">
                 <i class="bi bi-radar fs-4 me-2 text-success "></i>
-                <p>Selezione attiva </p>
+                <p className="subText mb-0">Selezione attiva </p>
               </div>
             </Col>
-            <Col>asd</Col>
+            <Col className="d-flex justify-content-end">
+              <i class="bi bi-x-lg fs-5 fontBold cursor"></i>
+            </Col>
           </Container>
         </Col>
       </Row>

@@ -41,47 +41,6 @@ export const profileReducer = (state = initialState, action) => {
         experiences: [...action.payload],
       };
 
-    // case UPDATE_PROFILE_NAME:
-    //   return {
-    //     ...state,
-    //     name: action.payload,
-    //   };
-    // case UPDATE_PROFILE_SURNAME:
-    //   return {
-    //     ...state,
-    //     surname: action.payload,
-    //   };
-    // case UPDATE_PROFILE_EMAIL:
-    //   return {
-    //     ...state,
-    //     email: action.payload,
-    //   };
-    // case UPDATE_PROFILE_USERNAME:
-    //   return {
-    //     ...state,
-    //     username: action.payload,
-    //   };
-    // case UPDATE_PROFILE_BIO:
-    //   return {
-    //     ...state,
-    //     bio: action.payload,
-    //   };
-    // case UPDATE_PROFILE_TITLE:
-    //   return {
-    //     ...state,
-    //     title: action.payload,
-    //   };
-    // case UPDATE_PROFILE_AREA:
-    //   return {
-    //     ...state,
-    //     area: action.payload,
-    //   };
-    // case UPDATE_PROFILE_IMAGE:
-    //   return {
-    //     ...state,
-    //     image: action.payload,
-    //   };
-
     default:
       return state;
   }
