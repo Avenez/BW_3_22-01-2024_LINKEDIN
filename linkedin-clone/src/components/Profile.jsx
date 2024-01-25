@@ -7,6 +7,7 @@ import { profileFetch, experiencesFetch, updateProfile } from "../redux/action/p
 
 const Profile = (props) => {
   const profile = useSelector((state) => state.profile);
+  console.log(profile);
   const id = "6551e7bbc55e7e0018f83bfb";
   const dispatch = useDispatch();
   const [loadingProfile, setLoadingProfile] = useState(true);

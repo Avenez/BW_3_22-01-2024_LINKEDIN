@@ -1,15 +1,15 @@
 export const SET_PROFILE = "SET_PROFILE";
-
+export const SET_MODAL_EXPERIENCES = "SET_MODAL_EXPERIENCES";
 export const SET_EXPERIENCES = "SET_EXPERIENCES";
-
-export const UPDATE_PROFILE_NAME = "UPDATE_PROFILE_NAME";
-export const UPDATE_PROFILE_SURNAME = "UPDATE_PROFILE_SURNAME";
-export const UPDATE_PROFILE_EMAIL = "UPDATE_PROFILE_EMAIL";
-export const UPDATE_PROFILE_USERNAME = "UPDATE_PROFILE_USERNAME";
-export const UPDATE_PROFILE_BIO = "UPDATE_PROFILE_BIO";
-export const UPDATE_PROFILE_TITLE = "UPDATE_PROFILE_TITLE";
-export const UPDATE_PROFILE_AREA = "UPDATE_PROFILE_AREA";
-export const UPDATE_PROFILE_IMAGE = "UPDATE_PROFILE_IMAGE";
+export const SET_CHANGE_EXPERIENCES = "SET_CHANGE_EXPERIENCES";
+// export const UPDATE_PROFILE_NAME = "UPDATE_PROFILE_NAME";
+// export const UPDATE_PROFILE_SURNAME = "UPDATE_PROFILE_SURNAME";
+// export const UPDATE_PROFILE_EMAIL = "UPDATE_PROFILE_EMAIL";
+// export const UPDATE_PROFILE_USERNAME = "UPDATE_PROFILE_USERNAME";
+// export const UPDATE_PROFILE_BIO = "UPDATE_PROFILE_BIO";
+// export const UPDATE_PROFILE_TITLE = "UPDATE_PROFILE_TITLE";
+// export const UPDATE_PROFILE_AREA = "UPDATE_PROFILE_AREA";
+// export const UPDATE_PROFILE_IMAGE = "UPDATE_PROFILE_IMAGE";
 
 export const isLoadingTrue = () => ({ type: "SET_IS_LOADING_TRUE" });
 export const isLoadingFalse = () => ({ type: "SET_IS_LOADING_FALSE" });
@@ -52,6 +52,7 @@ export const experiencesFetch = (id) => {
       });
       if (response.ok) {
         let result = await response.json();
+
         dispatch({ type: SET_EXPERIENCES, payload: result });
       } else {
         throw new Error("Fetch EXPERIENCES Fallita");
