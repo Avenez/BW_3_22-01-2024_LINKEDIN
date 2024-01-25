@@ -23,12 +23,11 @@ const ModalExperiences = (props) => {
     }));
   };
 
-  const dispatch = useDispatch();
   const changeExperienceFetch = async () => {
     console.log("ciao");
     try {
       let response = await fetch(
-        `https://striveschool-api.herokuapp.com/api/profile/${formValues.user}/experiences/${formValues._id}`, /////// problema, non ho il suo ID
+        `https://striveschool-api.herokuapp.com/api/profile/${formValues.user}/experiences/${formValues._id}`,
         {
           method: "PUT",
           headers: {
