@@ -2,7 +2,6 @@ import { Row, Col, Container } from "react-bootstrap";
 
 import { CaretDownFill, InfoSquareFill } from "react-bootstrap-icons";
 import ProfileHome from "./ProfileHome";
-import ModaleHome from "./ModaleHome";
 
 const Home = () => {
   return (
