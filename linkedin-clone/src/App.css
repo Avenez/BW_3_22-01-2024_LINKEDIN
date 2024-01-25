@@ -245,3 +245,16 @@ h5 {
 .mail-home-profile {
   font-size: 1rem;
 }
+
+.commenti-home:hover {
+  background-color: lightgrey;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.altri-post {
+  color: #0966c2;
+  border: solid 2px #0966c2;
+  background-color: #f3f2ee;
+  padding: 5px;
+}
