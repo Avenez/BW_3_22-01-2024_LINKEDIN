@@ -3,6 +3,7 @@ import JobElement from "./JobElement";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { fetchJobs } from "../redux/action/jobs";
+import JobsLeftAside from "./JobsLeftAside";
 
 const Jobs = () => {
   const jobs = useSelector((state) => state.jobs.jobs.data);
@@ -18,7 +19,11 @@ const Jobs = () => {
     <>
       <Container className="">
         <Row>
-          <Col xs={2}></Col>
+          <Col xs={3}>
+            {" "}
+            <JobsLeftAside />
+          </Col>
+
           <Col xs={6} className="border rounded-3 rounded bg-white">
             <h5 className="mt-4 mb-0">Le principali offerte di lavoro per te</h5>
             <p className="text-muted mt-1 subText">Sulla base del tuo profilo e della tua cronologia delle ricerche</p>
