@@ -4,6 +4,7 @@ import Modal from "react-bootstrap/Modal";
 import { Pencil } from "react-bootstrap-icons";
 import { useState } from "react";
 import { Form, Row, Col } from "react-bootstrap";
+import { useDispatch } from "react-redux";
 
 const ModalExperiences = (props) => {
   const [formValues, setFormValues] = useState({
@@ -11,8 +12,8 @@ const ModalExperiences = (props) => {
     area: props.area || "",
     role: props.role || "",
     description: props.description || "",
-    _id: props.id || "",
-    key: props._id,
+    _id: props._id || "",
+    user: props.user,
   });
 
   const handleInputChange = (fieldName, value) => {
@@ -22,16 +23,18 @@ const ModalExperiences = (props) => {
     }));
   };
 
+  const dispatch = useDispatch();
   const changeExperienceFetch = async () => {
+    console.log("ciao");
     try {
       let response = await fetch(
-        `https://striveschool-api.herokuapp.com/api/profile/${formValues.key}/experiences/${formValues._id}`, /////// problema, non ho il suo ID
+        `https://striveschool-api.herokuapp.com/api/profile/${formValues.user}/experiences/${formValues._id}`, /////// problema, non ho il suo ID
         {
           method: "PUT",
           headers: {
             Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTcxYzlhYzBkOGEyMDAwMThhNDhhM2MiLCJpYXQiOjE3MDYwOTE1MDUsImV4cCI6MTcwNzMwMTEwNX0.wH2VfmxlAU88LH_llTaiiDJwpbdcCfSgscNbK5cy1CY",
-            "Content-Type": "application/json",
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTcxYzlhYzBkOGEyMDAwMThhNDhhM2MiLCJpYXQiOjE3MDU5MTA4OTIsImV4cCI6MTcwNzEyMDQ5Mn0.IZoYbIHodDlNFoeqZShFFPImBDRUWCouOhcleq0eqGE",
+            // "Content-Type": "application/json",
           },
           body: JSON.stringify(formValues),
         }
@@ -206,21 +209,21 @@ const ModalExperiences = (props) => {
                 onChange={(e) => handleInputChange("descrizione", e.target.value)}
               />
             </Form.Group>
+            <Modal.Footer>
+              <Button onClick={handleClose} className="rounded-pill px-3 " variant="danger">
+                Elimina
+              </Button>
+              <Button
+                style={{ backgroundColor: "#0a66c2" }}
+                onClick={handleClose}
+                className="rounded-pill px-3"
+                type="submit"
+              >
+                Salva
+              </Button>
+            </Modal.Footer>
           </Form>
         </Modal.Body>
-        <Modal.Footer>
-          <Button onClick={handleClose} className="rounded-pill px-3 " variant="danger">
-            Elimina
-          </Button>
-          <Button
-            style={{ backgroundColor: "#0a66c2" }}
-            onClick={handleClose}
-            className="rounded-pill px-3"
-            type="submit"
-          >
-            Salva
-          </Button>
-        </Modal.Footer>
       </Modal>
     </div>
   );

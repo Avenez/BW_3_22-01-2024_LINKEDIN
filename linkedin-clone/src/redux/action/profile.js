@@ -39,7 +39,7 @@ export const profileFetch = (id) => {
   };
 };
 
-export const experiencesFetch = (id, idObj) => {
+export const experiencesFetch = (id) => {
   return async (dispatch) => {
     try {
       let response = await fetch(`https://striveschool-api.herokuapp.com/api/profile/${id}/experiences`, {

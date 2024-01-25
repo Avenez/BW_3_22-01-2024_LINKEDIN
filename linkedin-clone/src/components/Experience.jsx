@@ -60,8 +60,8 @@ const Experiences = (props) => {
                             role={experience.role}
                             area={experience.area}
                             description={experience.description}
-                            _id={experience.id}
-                            key={experience._id}
+                            _id={experience._id}
+                            user={experience.user}
                           />
                         )}
                       </Col>
