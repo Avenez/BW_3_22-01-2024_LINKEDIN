@@ -15,9 +15,6 @@ const JobsDetails = () => {
   const jobs = useSelector((state) => state.jobs.jobs.data);
   const jobsSlice = jobs.slice(0, 20);
 
-  //   const paragrafi = testo.split('');
-  //   const testoSenzaBreakLines = testoConBreakLines.replace(/<br>/g, '').replace(/\n/g, '');
-
   useEffect(() => {
     setJobId(jobid);
   }, []);
