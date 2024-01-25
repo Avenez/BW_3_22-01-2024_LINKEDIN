@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import post from "../redux/action";
+import post from "../redux/action/post";
 
 import { Row, Col } from "react-bootstrap";
 
@@ -12,6 +12,7 @@ const GeneratedPost = () => {
   let resultsSlice = results.slice(0, 5);
   console.log(resultsSlice);
   let dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(post());
   }, [dispatch]);
@@ -28,7 +29,7 @@ const GeneratedPost = () => {
             resultsSlice.map((p) => (
               <>
                 <img src={p.image} />
-                <p>{p.id}</p>
+                <p>{p._id}</p>
               </>
             ))
           )}

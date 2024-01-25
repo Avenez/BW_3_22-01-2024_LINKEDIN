@@ -13,7 +13,7 @@ const friends = () => {
       });
       if (resp.ok) {
         let result = await resp.json();
-        console.log(result);
+
         dispatch({
           type: SET_FRIENDS,
           payload: result,
