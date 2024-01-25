@@ -1,10 +1,54 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import { Pencil } from "react-bootstrap-icons";
 import { useState } from "react";
 import { Form, Row, Col } from "react-bootstrap";
 
-const ModalExperiences = () => {
+const ModalExperiences = (props) => {
+  const [formValues, setFormValues] = useState({
+    company: props.company || "",
+    area: props.area || "",
+    role: props.role || "",
+    description: props.description || "",
+    _id: props.id || "",
+    key: props._id,
+  });
+
+  const handleInputChange = (fieldName, value) => {
+    setFormValues((prevValues) => ({
+      ...prevValues,
+      [fieldName]: value,
+    }));
+  };
+
+  const changeExperienceFetch = async () => {
+    try {
+      let response = await fetch(
+        `https://striveschool-api.herokuapp.com/api/profile/${formValues.key}/experiences/${formValues._id}`, /////// problema, non ho il suo ID
+        {
+          method: "PUT",
+          headers: {
+            Authorization:
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTcxYzlhYzBkOGEyMDAwMThhNDhhM2MiLCJpYXQiOjE3MDYwOTE1MDUsImV4cCI6MTcwNzMwMTEwNX0.wH2VfmxlAU88LH_llTaiiDJwpbdcCfSgscNbK5cy1CY",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formValues),
+        }
+      );
+
+      if (response.ok) {
+        await response.json();
+
+        console.log("Change Experience Fetch chiamata" + JSON.stringify(formValues));
+      } else {
+        throw new Error("Fetch PUT EXPERIENCES Fallita");
+      }
+    } catch (error) {
+      console.error("Errore durante la richiesta PUT:", error);
+    }
+  };
+
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -12,29 +56,32 @@ const ModalExperiences = () => {
 
   return (
     <div className="modal show" style={{ display: "block", position: "initial" }}>
-      <Button variant="white" onClick={handleShow}>
-        <svg
-          className="me-3 cursor"
-          xmlns="http://www.w3.org/2000/svg"
-          width="20"
-          height="20"
-          fill="currentColor"
-          class="bi bi-pencil "
-          viewBox="0 0 16 16"
-        >
-          <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325"></path>
-        </svg>
-      </Button>
+      <button className=" d-flex justify-content-center align-items-center p-3 border-0 cursor outlineButtonsProfileGrey rounded-circle fs-4">
+        <Pencil className="" onClick={handleShow}></Pencil>
+      </button>
       <Modal show={show} onHide={handleClose} size="lg">
         <Modal.Header closeButton>
           <Modal.Title className="text-dark">Modifica Esperienza</Modal.Title>
         </Modal.Header>
         <Modal.Body className="pt-1">
           <p className="fs-6 mt-0 ">*Indica che è obbligatorio</p>
-          <Form>
+          <Form
+            onSubmit={(e) => {
+              e.preventDefault();
+              changeExperienceFetch();
+            }}
+          >
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label className="colorGray">Qualifica*</Form.Label>
-              <Form.Control type="text" placeholder="" className="border border-dark" autoFocus required />
+              <Form.Control
+                type="text"
+                placeholder=""
+                className="border border-dark"
+                value={formValues.role}
+                onChange={(e) => handleInputChange("role", e.target.value)}
+                autoFocus
+                required
+              />
             </Form.Group>
             <Form.Label className="colorGray">Tipo di impiego*</Form.Label>
             <Form.Select aria-label="Default select example" className="border border-dark">
@@ -54,12 +101,24 @@ const ModalExperiences = () => {
 
             <Form.Group className="mb-4" controlId="exampleForm.ControlInput1">
               <Form.Label className="colorGray">Nome azienda*</Form.Label>
-              <Form.Control type="text" placeholder="" className="border border-dark" />
+              <Form.Control
+                type="text"
+                placeholder=""
+                className="border border-dark "
+                value={formValues.company}
+                onChange={(e) => handleInputChange("azienda", e.target.value)}
+              />
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label className="colorGray">Località</Form.Label>
-              <Form.Control type="text" placeholder="" className="border border-dark" />
+              <Form.Control
+                type="text"
+                placeholder=""
+                className="border border-dark"
+                value={formValues.area}
+                onChange={(e) => handleInputChange("località", e.target.value)}
+              />
             </Form.Group>
             <Form.Label className="colorGray">Tipo di impiego*</Form.Label>
             <Form.Select aria-label="Default select example" className="border border-dark">
@@ -74,7 +133,7 @@ const ModalExperiences = () => {
             <Row className="pt-4">
               <Col xs={12} md={6}>
                 <Form.Label className="colorGray">Data di inizio*</Form.Label>
-                <Form.Select className="border border-dark" custom required>
+                <Form.Select className="border border-dark">
                   <option>Mese</option>
                   <option value="1">Gennaio</option>
                   <option value="2">Febbraio</option>
@@ -93,7 +152,7 @@ const ModalExperiences = () => {
               <Col xs={12} md={6}>
                 {" "}
                 <Form.Label className="colorGray">Data di inizio*</Form.Label>
-                <Form.Select className="border border-dark" custom required>
+                <Form.Select className="border border-dark">
                   <option>Anno</option>
                   {[...Array(101)].map((_, index) => {
                     const year = currentYear - index;
@@ -105,7 +164,7 @@ const ModalExperiences = () => {
             <Row className="pt-4">
               <Col xs={12} md={6}>
                 <Form.Label className="colorGray">Data di fine*</Form.Label>
-                <Form.Select className="border border-dark" custom required>
+                <Form.Select className="border border-dark">
                   <option>Mese</option>
                   <option>Mese</option>
                   <option value="1">Gennaio</option>
@@ -125,7 +184,7 @@ const ModalExperiences = () => {
               <Col xs={12} md={6}>
                 {" "}
                 <Form.Label className="colorGray">Data di fine*</Form.Label>
-                <Form.Select className="border border-dark" custom required>
+                <Form.Select className="border border-dark">
                   <option>Anno</option>
                   {[...Array(101)].map((_, index) => {
                     const year = currentYear - index;
@@ -140,7 +199,12 @@ const ModalExperiences = () => {
             </Row>
             <Form.Label className="colorGray mt-3">Decrizione</Form.Label>
             <Form.Group className="border border-dark rounded-2" controlId="exampleForm.ControlTextarea1">
-              <Form.Control as="textarea" rows={3} />
+              <Form.Control
+                as="textarea"
+                rows={3}
+                value={formValues.description}
+                onChange={(e) => handleInputChange("descrizione", e.target.value)}
+              />
             </Form.Group>
           </Form>
         </Modal.Body>
@@ -148,7 +212,12 @@ const ModalExperiences = () => {
           <Button onClick={handleClose} className="rounded-pill px-3 " variant="danger">
             Elimina
           </Button>
-          <Button style={{ backgroundColor: "#0a66c2" }} onClick={handleClose} className="rounded-pill px-3">
+          <Button
+            style={{ backgroundColor: "#0a66c2" }}
+            onClick={handleClose}
+            className="rounded-pill px-3"
+            type="submit"
+          >
             Salva
           </Button>
         </Modal.Footer>

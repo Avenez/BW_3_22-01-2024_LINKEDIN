@@ -1,9 +1,9 @@
 import React from "react";
-import { Row, Col, Container, Button } from "react-bootstrap";
+import { Row, Col, Container } from "react-bootstrap";
 
 import { useSelector } from "react-redux";
 import ModalExperiences from "./ModalExperiences";
-import ModalExperiencesAdd from "./ModalExperiencesAdd";
+// import ModalExperiencesAdd from "./ModalExperiencesAdd";
 
 const Experiences = (props) => {
   const profile = useSelector((state) => state.profile);
@@ -21,7 +21,7 @@ const Experiences = (props) => {
                 <></>
               ) : (
                 <div>
-                  <ModalExperiencesAdd />
+                  {/* <ModalExperiencesAdd /> */}
                   {/* qui ci va il Botton */}
                 </div>
               )}
@@ -33,7 +33,7 @@ const Experiences = (props) => {
           <Row>
             {profile.experiences.map((experience) => (
               <>
-                <Row className="mt-2">
+                <Row key={experience._id} className="mt-2">
                   <Col xs={11}>
                     <Container className="d-flex border-bottom">
                       <Col xs={2} xl={1} className="me-2">
@@ -51,7 +51,20 @@ const Experiences = (props) => {
                         <p className="colorGray">{experience.area}</p>
                         <p>{experience.description}</p>
                       </Col>
-                      <Col>{props.userId != null ? <></> : <ModalExperiences />}</Col>
+                      <Col>
+                        {props.userId != null ? (
+                          <></>
+                        ) : (
+                          <ModalExperiences
+                            company={experience.company}
+                            role={experience.role}
+                            area={experience.area}
+                            description={experience.description}
+                            _id={experience.id}
+                            key={experience._id}
+                          />
+                        )}
+                      </Col>
                     </Container>
                   </Col>
                 </Row>
