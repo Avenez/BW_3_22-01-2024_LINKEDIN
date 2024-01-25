@@ -102,11 +102,7 @@ const Profile = (props) => {
                   <div className="">
                     <input type="file" id="profileImage" hidden onChange={handleImageChange} />
                     <label htmlFor="profileImage">
-                      <img
-                        className="photoProfile cursor"
-                        src="https://media.gqitalia.it/photos/642e9d8bfc2b9ece8567af56/1:1/w_1079,h_1079,c_limit/therock.jpg"
-                        alt="profilePicture"
-                      />
+                      <img className="photoProfile cursor" src={localProfile.image} alt="profilePicture" />
                     </label>
                   </div>
                 </>
