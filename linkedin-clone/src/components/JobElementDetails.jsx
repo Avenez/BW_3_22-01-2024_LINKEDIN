@@ -1,16 +1,29 @@
 import { Col, Container, Row } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 
-const JobElement = (props) => {
-  const navigate = useNavigate();
+const JobElementDetails = (props) => {
+  //   const selectJob = (event) => {
+  //     const jobs = document.querySelectorAll(".JobsDetails");
+  //     if (!event.target.classList.contains("jobSelected ")) {
+  //       jobs.forEach((job) => job.classList.remove("jobSelected"));
+  //       event.target.classList.add("jobSelected");
+  //     }
+  //   };
+
   return (
     <>
-      <Row className="mt-2">
+      <Row className={`mt-2 ps-0  JobsDetails ${props.controlloId == props.id ? "jobSelected" : ""}  `}>
         <Col xs={12}>
-          <Container className=" border-bottom border-bottom cursor p-0 pb-2">
+          <Container className=" border-bottom cursor p-0 pb-2">
             <Row>
               <Col xs={10}>
-                <Row onClick={() => navigate("/jobsdetails/" + props.job._id)}>
+                <Row
+                  onClick={(event) => {
+                    props.setJobId(props.id);
+                    console.log(props.id);
+                    // selectJob(event);
+                  }}
+                >
                   <Col xs={3} className="me-2">
                     <img
                       className="sizeIconEx"
@@ -19,7 +32,7 @@ const JobElement = (props) => {
                     />
                   </Col>
                   <Col xs={8}>
-                    <Link className="ps-0 links mb-0">
+                    <Link className="ps-0 text-decoration-none mb-0">
                       <h6 className="mb-0 mt-1">{props.job.title}</h6>
                     </Link>
                     <p className="mb-0 mt-0">{props.job.company_name}</p>
@@ -43,4 +56,4 @@ const JobElement = (props) => {
   );
 };
 
-export default JobElement;
+export default JobElementDetails;

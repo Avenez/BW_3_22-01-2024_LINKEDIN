@@ -1,7 +1,8 @@
 /* -------------GENERAL--------- */
+html,
 .App {
-  background-attachment: fixed;
   background-color: #f3f2ee;
+  overflow-x: clip;
 }
 h5 {
   margin-bottom: 0px;
@@ -240,4 +241,58 @@ h5 {
 .espandi-rete:hover {
   background-color: lightgrey;
   cursor: pointer;
+}
+
+/* ---------JobsDetails-------- */
+
+.JobDetails {
+  height: 81dvh;
+  overflow-y: scroll;
+  overflow-x: clip;
+}
+
+/* .JobsDetailsContainer {
+  position: fixed;
+  top: 80px;
+  left: 10%;
+} */
+
+.bg-Link {
+  background-color: #0a5ed7;
+}
+
+.JobsDetailsTopLeftRound {
+  border-top-left-radius: 10px;
+}
+
+.borderJobsDetails {
+  border-bottom: 1px solid lightgray;
+  border-right: 1px solid lightgray;
+  border-top: 1px solid lightgray;
+}
+
+.Link-default {
+  text-decoration: none;
+}
+
+.Link-default:hover {
+  text-decoration: underline;
+}
+
+.bg-light-green {
+  background-color: #daebd1;
+  border-radius: 5px;
+}
+
+.jobDetailsContainer {
+  height: 91dvh;
+  overflow-y: scroll;
+  overflow-x: clip;
+}
+
+.JobsDetails {
+}
+
+.jobSelected {
+  border-left: 15px solid green;
 }

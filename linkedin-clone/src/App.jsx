@@ -8,6 +8,7 @@ import Main from "./components/Main";
 import OtherProfile from "./components/OtherProfile";
 import Jobs from "./components/Jobs";
 import Home from "./components/Home";
+import JobsDetails from "./components/JobsDetails";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/jobs" element={<Jobs />} />
           <Route path="/profile/:userId" element={<OtherProfile />} />
           <Route path="/home" element={<Home />} />
+          <Route path="/jobsdetails/:jobid" element={<JobsDetails />} />
         </Routes>
       </BrowserRouter>
     </div>
