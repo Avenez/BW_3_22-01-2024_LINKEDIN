@@ -1,7 +1,7 @@
 import { SET_JOBS } from "../action/jobs";
 
 const initialState = {
-  jobs: null,
+  jobs: {},
   isLoading: true,
 };
 

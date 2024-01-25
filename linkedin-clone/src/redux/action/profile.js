@@ -62,35 +62,6 @@ export const experiencesFetch = (id) => {
   };
 };
 
-// export const updateProfile = (id, updatedProfileData) => {
-//   return async (dispatch) => {
-//     console.log("inizia il PUT");
-//     console.log(id);
-//     try {
-//       let response = await fetch("https://striveschool-api.herokuapp.com/api/profile/" + id, {
-//         method: "PUT",
-//         headers: {
-//           Authorization:
-//             "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTcxYzlhYzBkOGEyMDAwMThhNDhhM2MiLCJpYXQiOjE3MDU5MTA4OTIsImV4cCI6MTcwNzEyMDQ5Mn0.IZoYbIHodDlNFoeqZShFFPImBDRUWCouOhcleq0eqGE",
-//           "Content-Type": "application/json",
-//         },
-//         body: JSON.stringify(updatedProfileData),
-//       });
-//       console.log(updatedProfileData);
-
-//       if (response.ok) {
-//         let result = await response.json();
-//         console.log(result);
-//         dispatch({ type: SET_PROFILE, payload: result });
-//       } else {
-//         throw new Error("Aggiornamento Profilo Fallito");
-//       }
-//     } catch (error) {
-//       console.error("Error", error);
-//     }
-//   };
-// };
-
 export const updateProfile = (updatedProfileData) => {
   return async (dispatch) => {
     console.log("inizia il PUT");
