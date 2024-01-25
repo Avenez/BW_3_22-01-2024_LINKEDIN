@@ -7,6 +7,7 @@ import LinkNav from "./components/LinkNav";
 import Main from "./components/Main";
 import OtherProfile from "./components/OtherProfile";
 import Jobs from "./components/Jobs";
+import Home from "./components/Home";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/" element={<Main />} />
           <Route path="/jobs" element={<Jobs />} />
           <Route path="/profile/:userId" element={<OtherProfile />} />
+          <Route path="/home" element={<Home />} />
         </Routes>
       </BrowserRouter>
     </div>

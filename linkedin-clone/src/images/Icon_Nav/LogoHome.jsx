@@ -1,10 +1,9 @@
-import OverlayTrigger from "react-bootstrap/OverlayTrigger";
-import Tooltip from "react-bootstrap/Tooltip";
 import React from "react";
+import { Link } from "react-router-dom";
 
 const LogoHome = (props) => {
   return (
-    <div className="d-flex flex-column align-items-center  bord">
+    <Link to="/home" className="d-flex flex-column align-items-center bord text-decoration-none">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
@@ -19,7 +18,7 @@ const LogoHome = (props) => {
       </svg>
 
       <p className="mercado-match">Home</p>
-    </div>
+    </Link>
   );
 };
 
