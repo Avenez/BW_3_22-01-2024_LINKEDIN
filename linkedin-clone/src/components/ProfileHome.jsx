@@ -60,7 +60,11 @@ const ProfileHome = () => {
               <div className="">
                 <input type="file" id="profileImage" hidden />
                 <label htmlFor="profileImage">
-                  <img className="fotoProfiloHome cursor " src={profile.image} alt="profilePicture" />
+                  <img
+                    className="fotoProfiloHome cursor "
+                    src="https://media.gqitalia.it/photos/642e9d8bfc2b9ece8567af56/1:1/w_1079,h_1079,c_limit/therock.jpg"
+                    alt="profilePicture"
+                  />
                 </label>
               </div>
             </div>
@@ -79,8 +83,10 @@ const ProfileHome = () => {
                 </Row>
                 <Row className="  text-secondary mt-0 ">
                   <Col className="d-flex">
-                    <p className="mb-2">{profile.area}</p>{" "}
-                    <Link className="ms-2 link-primary links   ">{profile.email}</Link>
+                    <div>
+                      <p className="mb-2">{profile.area}</p>
+                      <Link className=" link-primary links mail-home-profile">{profile.email}</Link>
+                    </div>
                   </Col>
                 </Row>
               </Col>

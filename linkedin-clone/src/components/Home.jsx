@@ -2,16 +2,19 @@ import { Row, Col, Container } from "react-bootstrap";
 
 import { CaretDownFill, InfoSquareFill } from "react-bootstrap-icons";
 import ProfileHome from "./ProfileHome";
+import GeneratedPost from "./GeneratedPost";
 
 const Home = () => {
   return (
     <Container>
       <Row>
-        <Col md={3}>
+        <Col sm={12} md={3}>
           <ProfileHome />
         </Col>
-        <Col md={6}>{/* <ModaleHome /> */}</Col>
-        <Col md={3}>
+        <Col sm={12} md={6}>
+          <GeneratedPost />
+        </Col>
+        <Col sm={12} md={3}>
           <div>
             <div className="bg-white mb-2 py-2 border border-1r rounded ">
               <div className="d-flex justify-content-between align-items-center">
