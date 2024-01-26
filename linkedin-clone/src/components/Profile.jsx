@@ -4,6 +4,7 @@ import ModalProfile from "./ModalProfile";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { profileFetch, experiencesFetch, updateProfile } from "../redux/action/profile";
+import Carosello from "./Carosello";
 
 const Profile = (props) => {
   const profile = useSelector((state) => state.profile);
@@ -119,7 +120,7 @@ const Profile = (props) => {
                 </>
               ) : (
                 <Row className=" justify-content-end  ">
-                  <Col xs={2}>
+                  <Col xs={1}>
                     <ModalProfile
                       localProfile={localProfile}
                       handleUpdateProfile={handleUpdateProfile}
@@ -130,7 +131,7 @@ const Profile = (props) => {
               )}
             </Col>
           </Row>
-          <Container className="p-3">
+          <Container className="px-3">
             <Row>
               <Col xs={12} md={8}>
                 <Row className="mt-4 text-start">
@@ -171,14 +172,15 @@ const Profile = (props) => {
                   </Col>
                 </Row>
               </Col>
-              <Col></Col>
             </Row>
             {props.userId != null ? (
               <></>
             ) : (
               <Row className="text-secondary mt-2 justify-content-start  ">
                 <Col xs={4} md={3} className="p-0 text-start me-1 ">
-                  <button className="btn btn-primary rounded-4 fw-bold w-100">Disponibile per</button>
+                  <button style={{ backgroundColor: "#2465BC" }} className="btn text-light rounded-4 fw-bold w-100">
+                    Disponibile per
+                  </button>
                 </Col>
                 <Col xs={5} md={4} className="p-0  text-center me-1">
                   <button className="outlineButtons rounded-4 fw-bold w-100 m-auto  ">
@@ -195,6 +197,9 @@ const Profile = (props) => {
                 </Col>
               </Row>
             )}
+            <Row>
+              <Carosello />
+            </Row>
           </Container>
         </Col>
       </Row>
