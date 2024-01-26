@@ -2,6 +2,7 @@ import { Col, Container, Row, Spinner } from "react-bootstrap";
 import Profile from "./Profile";
 import Analisi from "./Analisi";
 import Aside from "./Aside";
+import Risorse from "./Risorse";
 import Attività from "./Attività";
 import Info from "./Info";
 import Experiences from "./Experience";
@@ -19,6 +20,7 @@ const Main = () => {
             <Col xs={12} md={8}>
               <Profile />
               <Analisi />
+              <Risorse />
               <Info />
               <Attività />
               <Experiences />

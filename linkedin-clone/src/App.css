@@ -3,6 +3,7 @@ html,
 .App {
   background-color: #f3f2ee;
   overflow-x: clip;
+  font-size: 92.5%;
 }
 h5 {
   margin-bottom: 0px;

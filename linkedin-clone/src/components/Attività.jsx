@@ -37,7 +37,7 @@ const Attività = () => {
               className=" d-flex justify-content-center barGray py-2 "
               style={{ borderTop: "1px solid rgb(206, 199, 199)" }}
             >
-              <span className="me-2">Mostra tutte le analisi </span>
+              <span className="me-2">Mostra tutte le attività </span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="26"
