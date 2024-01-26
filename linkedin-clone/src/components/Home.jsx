@@ -3,6 +3,7 @@ import { Row, Col, Container } from "react-bootstrap";
 import { CaretDownFill, InfoSquareFill } from "react-bootstrap-icons";
 import ProfileHome from "./ProfileHome";
 import GeneratedPost from "./GeneratedPost";
+import AddPost from "./AddPost";
 
 const Home = () => {
   return (
@@ -12,6 +13,10 @@ const Home = () => {
           <ProfileHome />
         </Col>
         <Col sm={12} md={6}>
+          <Row>
+            <AddPost />
+          </Row>
+
           <GeneratedPost />
         </Col>
         <Col sm={12} md={3}>
