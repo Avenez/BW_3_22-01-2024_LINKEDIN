@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import post from "../redux/action/post";
 import { Row, Col } from "react-bootstrap";
-import { Chat, Command, HandThumbsUp, Plus, Send, Share } from "react-bootstrap-icons";
+import { Chat, HandThumbsUp, Send, Share } from "react-bootstrap-icons";
 
 const GeneratedPost = () => {
   let results = useSelector((state) => state.post.postState);
