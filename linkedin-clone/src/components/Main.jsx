@@ -16,14 +16,14 @@ const Main = () => {
       <>
         <Container>
           <Row>
-            <Col xs={10} md={8}>
+            <Col xs={12} md={8}>
               <Profile />
               <Analisi />
               <Info />
               <Attività />
               <Experiences />
             </Col>
-            <Col className="d-sm-none d-lg-inline-block">
+            <Col md={3} className="d-sm-none d-lg-inline-block">
               <Aside />
             </Col>
           </Row>

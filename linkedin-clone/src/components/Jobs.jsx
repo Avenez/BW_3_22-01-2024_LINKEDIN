@@ -17,7 +17,7 @@ const Jobs = () => {
 
   return (
     <>
-      <Container className="">
+      <Container>
         <Row>
           <Col xs={3}>
             {" "}
