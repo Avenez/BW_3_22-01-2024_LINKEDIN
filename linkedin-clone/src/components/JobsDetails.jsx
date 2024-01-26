@@ -5,6 +5,7 @@ import JobElementDetails from "./JobElementDetails";
 import { useEffect, useState } from "react";
 import JobsSideDetails from "./JobsSideDetails";
 import { useParams } from "react-router";
+import MiniFooter from "./MiniFooter";
 
 const JobsDetails = () => {
   // ---------JOB ID
@@ -46,6 +47,7 @@ const JobsDetails = () => {
                   <i className="bi bi-arrow-right fontBold"></i>
                 </Col>
               </Row>
+              <MiniFooter />
             </div>
           </Col>
           <Col xs={5} className="bg-white borderJobsDetails jobDetailsContainer">
