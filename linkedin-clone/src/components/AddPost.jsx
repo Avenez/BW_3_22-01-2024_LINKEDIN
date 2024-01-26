@@ -20,7 +20,7 @@ const AddPost = () => {
 
   const handlePost = (event) => {
     event.preventDefault();
-    dispatch(sendPost(localPost));
+    sendPost(localPost);
   };
 
   return (
