@@ -24,7 +24,7 @@ const GeneratedPost = () => {
     }
   }, [dispatch, results.length]);
 
-  let resultsSlice = results.slice(randomSlice.start, randomSlice.end);
+  let resultsSlice = results.slice(-30).reverse();
   console.log(resultsSlice);
 
   return (
