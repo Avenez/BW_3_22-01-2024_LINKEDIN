@@ -1,9 +1,9 @@
 import React from "react";
 import { Row, Col, Container } from "react-bootstrap";
-
+import { Plus } from "react-bootstrap-icons";
 import { useSelector } from "react-redux";
 import ModalExperiences from "./ModalExperiences";
-// import ModalExperiencesAdd from "./ModalExperiencesAdd";
+import ModalExperiencesAdd from "./ModalExperiencesAdd";
 
 const Experiences = (props) => {
   const profile = useSelector((state) => state.profile);
@@ -17,12 +17,12 @@ const Experiences = (props) => {
               <h5 className="" style={{ lineHeight: 1.8 }}>
                 Esperienza
               </h5>
+
               {props.userId != null ? (
                 <></>
               ) : (
                 <div>
-                  {/* <ModalExperiencesAdd /> */}
-                  {/* qui ci va il Botton */}
+                  <ModalExperiencesAdd />
                 </div>
               )}
             </Col>

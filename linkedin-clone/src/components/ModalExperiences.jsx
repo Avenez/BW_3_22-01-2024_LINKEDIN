@@ -23,7 +23,7 @@ const ModalExperiences = (props) => {
     }));
   };
 
-  const changeExperienceFetch = async () => {
+  const changeExperiencePut = async () => {
     console.log("ciao");
     try {
       let response = await fetch(
@@ -51,6 +51,31 @@ const ModalExperiences = (props) => {
     }
   };
 
+  const changeExperienceDelete = async () => {
+    console.log("ciao");
+    try {
+      let response = await fetch(
+        `https://striveschool-api.herokuapp.com/api/profile/${formValues.user}/experiences/${formValues._id}`,
+        {
+          method: "DELETE",
+          headers: {
+            Authorization:
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTcxYzlhYzBkOGEyMDAwMThhNDhhM2MiLCJpYXQiOjE3MDU5MTA4OTIsImV4cCI6MTcwNzEyMDQ5Mn0.IZoYbIHodDlNFoeqZShFFPImBDRUWCouOhcleq0eqGE",
+            // "Content-Type": "application/json",
+          },
+        }
+      );
+
+      if (response.ok) {
+        console.log(response + "sono qui DELETE");
+      } else {
+        throw new Error("Fetch DELETE EXPERIENCES Fallita");
+      }
+    } catch (error) {
+      console.error("Errore durante la richiesta DELETE:", error);
+    }
+  };
+
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -70,7 +95,7 @@ const ModalExperiences = (props) => {
           <Form
             onSubmit={(e) => {
               e.preventDefault();
-              changeExperienceFetch();
+              changeExperiencePut();
             }}
           >
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
@@ -108,7 +133,7 @@ const ModalExperiences = (props) => {
                 placeholder=""
                 className="border border-dark "
                 value={formValues.company}
-                onChange={(e) => handleInputChange("azienda", e.target.value)}
+                onChange={(e) => handleInputChange("company", e.target.value)}
               />
             </Form.Group>
 
@@ -119,7 +144,7 @@ const ModalExperiences = (props) => {
                 placeholder=""
                 className="border border-dark"
                 value={formValues.area}
-                onChange={(e) => handleInputChange("località", e.target.value)}
+                onChange={(e) => handleInputChange("area", e.target.value)}
               />
             </Form.Group>
             <Form.Label className="colorGray">Tipo di impiego*</Form.Label>
@@ -205,16 +230,20 @@ const ModalExperiences = (props) => {
                 as="textarea"
                 rows={3}
                 value={formValues.description}
-                onChange={(e) => handleInputChange("descrizione", e.target.value)}
+                onChange={(e) => handleInputChange("description", e.target.value)}
               />
             </Form.Group>
             <Modal.Footer>
-              <Button onClick={handleClose} className="rounded-pill px-3 " variant="danger">
+              <Button
+                onClick={() => handleClose(changeExperienceDelete)}
+                className="rounded-pill px-3 "
+                variant="danger"
+              >
                 Elimina
               </Button>
               <Button
                 style={{ backgroundColor: "#0a66c2" }}
-                onClick={handleClose}
+                onClick={() => handleClose(changeExperiencePut)}
                 className="rounded-pill px-3"
                 type="submit"
               >
