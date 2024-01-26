@@ -10,7 +10,7 @@ async function sendPost(postData) {
       body: JSON.stringify(postData),
     });
     if (response.ok) {
-      console.log("POST AVVENUTO");
+      console.log("POST AVVENUTO" + postData);
       return response;
     }
   } catch (error) {
