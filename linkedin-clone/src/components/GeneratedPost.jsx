@@ -10,6 +10,7 @@ const GeneratedPost = () => {
   console.log(results);
   let isLoading = useSelector((state) => state.post.isLoading);
   console.log(isLoading);
+
   let resultsSlice = results.slice(20, 28);
   console.log(resultsSlice);
   let dispatch = useDispatch();

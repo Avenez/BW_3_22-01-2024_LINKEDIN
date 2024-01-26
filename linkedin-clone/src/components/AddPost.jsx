@@ -1,6 +1,12 @@
 import { Col, Row } from "react-bootstrap";
+import sendPost from "../redux/action/sendPost";
+import { useState } from "react";
 
 const AddPost = () => {
+  const [localPost, setLocalPost] = useState({
+    text: "",
+  });
+
   return (
     <>
       <Col className="">
@@ -13,7 +19,12 @@ const AddPost = () => {
             />
           </Col>
           <Col>
-            <button className="btn btn-outline-secondary text-start rounded-pill w-100 h-100 ">Avvia un post</button>
+            <button
+              className="btn btn-outline-secondary text-start rounded-pill w-100 h-100 "
+              onClick={() => sendPost(localPost)}
+            >
+              Avvia un post
+            </button>
           </Col>
         </Row>
         <Row>
