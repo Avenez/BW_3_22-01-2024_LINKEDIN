@@ -6,24 +6,26 @@ import { Chat, HandThumbsUp, Share, Send } from "react-bootstrap-icons";
 import Spinner from "./Spinner";
 
 const GeneratedPost = () => {
-  const results = useSelector((state) => state.post.postState);
-  const isLoading = useSelector((state) => state.post.isLoading);
+  let results = useSelector((state) => state.post.postState);
+  console.log(results);
+  let isLoading = useSelector((state) => state.post.isLoading);
+  console.log(isLoading);
+
   const [randomSlice, setRandomSlice] = useState({ start: 0, end: 8 });
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(post());
-  }, [dispatch]);
 
-  useEffect(() => {
-    if (results.length > 8) {
+    if (results.length > 0) {
       const maxStartIndex = results.length - 8;
       const start = Math.floor(Math.random() * maxStartIndex);
       setRandomSlice({ start, end: start + 8 });
     }
-  }, [results.length]);
+  }, [dispatch, results.length]);
 
-  const resultsSlice = results.slice(randomSlice.start, randomSlice.end);
+  let resultsSlice = results.slice(randomSlice.start, randomSlice.end);
+  console.log(resultsSlice);
 
   return (
     <>
@@ -52,14 +54,13 @@ const GeneratedPost = () => {
                   <p className="commenti-home">
                     <Chat className="me-1" />
                     Commenta
-                  </p>
+                  </p>{" "}
                   <p className="commenti-home">
                     <Share className="me-1" />
                     Diffondi post
                   </p>
                   <p className="commenti-home">
-                    <Send className="me-1" />
-                    Invia
+                    <Send className="me-1" /> Invia
                   </p>
                 </div>
               </div>
@@ -70,7 +71,18 @@ const GeneratedPost = () => {
       <Row>
         <Col>
           <div className="my-4 text-center">
-            <span className="altri-post rounded-pill fw-bold">Vedi altri post</span>
+            <span
+              className="altri-post rounded-pill fw-bold "
+              onClick={() => {
+                if (results.length > 8) {
+                  const maxStartIndex = results.length - 8;
+                  const start = Math.floor(Math.random() * maxStartIndex);
+                  setRandomSlice({ start, end: start + 8 });
+                }
+              }}
+            >
+              Vedi altri post
+            </span>
           </div>
         </Col>
       </Row>

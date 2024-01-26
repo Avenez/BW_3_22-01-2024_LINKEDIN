@@ -326,3 +326,8 @@ p {
 .postImage {
   width: 50px;
 }
+
+.altri-post:hover {
+  cursor: pointer;
+  background-color: burlywood;
+}
