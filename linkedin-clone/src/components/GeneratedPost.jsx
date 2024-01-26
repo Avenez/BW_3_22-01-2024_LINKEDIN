@@ -3,12 +3,14 @@ import { useDispatch, useSelector } from "react-redux";
 import post from "../redux/action/post";
 import { Row, Col } from "react-bootstrap";
 import { Chat, HandThumbsUp, Share, Send } from "react-bootstrap-icons";
+import Spinner from "./Spinner";
 
 const GeneratedPost = () => {
   const results = useSelector((state) => state.post.postState);
   const isLoading = useSelector((state) => state.post.isLoading);
   const [randomSlice, setRandomSlice] = useState({ start: 0, end: 8 });
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(post());
   }, [dispatch]);
@@ -28,7 +30,7 @@ const GeneratedPost = () => {
       <Row>
         <Col>
           {isLoading ? (
-            <p>Caricamento in corso..</p>
+            <Spinner />
           ) : (
             resultsSlice.map((p, index) => (
               <div key={index} className="bg-white mb-2 rounded border border-secondary-light">

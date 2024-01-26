@@ -41,10 +41,14 @@ const JobsDetails = () => {
                   setJobId={setJobId}
                 />
               ))}
-              <Row className="JobsEndButton rounded-bottom-3">
-                <Col className="d-flex justify-content-center justify-content-center  p-2 text-secondary">
-                  <h5 className="me-2">Mostra tutto</h5>
-                  <i className="bi bi-arrow-right fontBold"></i>
+              <Row className=" rounded-bottom-3 border border-bottom-1">
+                <Col className="d-flex justify-content-center align-items-center p-2 text-secondary">
+                  <i class="bi bi-caret-left-fill fontBold cursor me-2"></i>
+                  <button className="btn btn-outline-secondary  me-2 py-1  rounded-circle ">1</button>
+                  <button className="btn btn-outline-secondary  me-2 py-1  rounded-circle"> 2 </button>
+                  <button className="btn btn-outline-secondary  me-2 py-1  rounded-circle"> 3 </button>
+                  <button className="btn btn-outline-secondary  me-2 py-1  rounded-circle"> 4 </button>
+                  <i className="bi bi-caret-right-fill fontBold cursor"></i>
                 </Col>
               </Row>
               <MiniFooter />
