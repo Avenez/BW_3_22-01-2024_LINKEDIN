@@ -12,10 +12,8 @@ const Home = () => {
         <Col sm={12} md={3}>
           <ProfileHome />
         </Col>
-        <Col sm={12} md={6}>
-          <Row>
-            <AddPost />
-          </Row>
+        <Col sm={12} md={6} className="pe-0">
+          <AddPost />
 
           <GeneratedPost />
         </Col>

@@ -29,7 +29,7 @@ const AddPost = () => {
       <Container className="bg-white rounded-3 pt-3 mb-3 ">
         <Container>
           <Row>
-            <Col xs={1} className="me-2">
+            <Col xs={1} className="me-2 ps">
               <img
                 src="https://media.gqitalia.it/photos/642e9d8bfc2b9ece8567af56/1:1/w_1079,h_1079,c_limit/therock.jpg"
                 alt="profileImage"
