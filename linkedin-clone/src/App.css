@@ -258,3 +258,8 @@ h5 {
   background-color: #f3f2ee;
   padding: 5px;
 }
+
+.altri-post:hover {
+  cursor: pointer;
+  background-color: burlywood;
+}
