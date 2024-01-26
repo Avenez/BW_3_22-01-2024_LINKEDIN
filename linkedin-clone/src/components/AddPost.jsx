@@ -1,8 +1,17 @@
 import { Col, Row, Container } from "react-bootstrap";
 import sendPost from "../redux/action/sendPost";
 import { useState } from "react";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+import Modal from "react-bootstrap/Modal";
+import { CaretDownFill, ownFill, Clock } from "react-bootstrap-icons";
 
 const AddPost = () => {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   const [localPost, setLocalPost] = useState({
     text: "",
   });
@@ -23,9 +32,45 @@ const AddPost = () => {
               <button
                 style={{ borderColor: "#666666" }}
                 className="btn btn-light text-start  text-opacity-50 fw-medium  rounded-pill w-100 h-100 opacity-75"
+                onClick={handleShow}
               >
                 Avvia un post
               </button>
+              {/* -------------------------MODAL---------------------- */}
+              <Modal show={show} onHide={handleClose}>
+                <Modal.Header closeButton className="border-0">
+                  <Modal.Title>
+                    <img
+                      src="https://media.gqitalia.it/photos/642e9d8bfc2b9ece8567af56/1:1/w_1079,h_1079,c_limit/therock.jpg"
+                      alt="profileImage"
+                      className=" rounded rounded-circle postImage me-2"
+                    />
+                    Oleksandr Larionov
+                    <CaretDownFill className="ms-2 text-secondary fs-5" />
+                  </Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                  <Form>
+                    <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+                      <Form.Control
+                        value={localPost.text}
+                        as="textarea"
+                        rows={7}
+                        placeholder="Di cosa vorresti parlare?"
+                        className="border-0 "
+                        onChange={(event) => setLocalPost(event.target.value)}
+                      />
+                    </Form.Group>
+                  </Form>
+                </Modal.Body>
+                <Modal.Footer className="p-1">
+                  <Clock className="me-2 fs-5" />
+                  <Button variant="outline-secondary" className="rounded-pill py-1 px-3" onClick={sendPost(localPost)}>
+                    Pubblica
+                  </Button>
+                </Modal.Footer>
+              </Modal>
+              {/* ---------------------------------------------------------- */}
             </Col>
           </Row>
         </Container>
