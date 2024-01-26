@@ -21,6 +21,7 @@ const Main = () => {
               <Analisi />
               <Info />
               <Attività />
+
               <Experiences />
             </Col>
             <Col className="d-sm-none d-lg-inline-block">
