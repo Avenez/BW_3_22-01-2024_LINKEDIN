@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const LogoHome = (props) => {
   return (
-    <Link to="/home" className="d-flex flex-column align-items-center bord text-decoration-none">
+    <Link to="/" className="d-flex flex-column align-items-center bord text-decoration-none">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"

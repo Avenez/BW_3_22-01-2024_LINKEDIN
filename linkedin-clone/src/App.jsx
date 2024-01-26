@@ -16,10 +16,10 @@ function App() {
       <BrowserRouter>
         <LinkNav />
         <Routes>
-          <Route path="/" element={<Main />} />
+          <Route path="/profile" element={<Main />} />
           <Route path="/jobs" element={<Jobs />} />
           <Route path="/profile/:userId" element={<OtherProfile />} />
-          <Route path="/home" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/jobsdetails/:jobid" element={<JobsDetails />} />
         </Routes>
       </BrowserRouter>
