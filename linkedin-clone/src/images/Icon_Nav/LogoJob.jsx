@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const LogoJob = () => {
   return (
     <>
-      <Link to="/jobs" className="d-flex flex-column align-items-center bord">
+      <Link to="/jobs" className="d-flex flex-column align-items-center bord text-decoration-none">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"

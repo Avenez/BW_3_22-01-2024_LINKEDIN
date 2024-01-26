@@ -21,6 +21,7 @@ const AddPost = () => {
   const handlePost = (event) => {
     event.preventDefault();
     sendPost(localPost);
+    handleClose();
   };
 
   return (

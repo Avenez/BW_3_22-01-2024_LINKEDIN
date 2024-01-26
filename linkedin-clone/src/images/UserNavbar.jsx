@@ -6,8 +6,8 @@ const UserNavbar = (props) => {
   const profile = useSelector((state) => state.profile);
 
   return (
-    <Link to={"/profile"}>
-      <div className="d-flex flex-column  align-items-center  bord user">
+    <Link to={"/profile"} className="text-decoration-none">
+      <div className="d-flex flex-column  align-items-center  bord user ">
         <img
           className="rounded-circle shadow-4-strong resized-avatar"
           alt="avatar2"
