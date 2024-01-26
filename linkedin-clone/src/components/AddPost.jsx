@@ -5,9 +5,11 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import { CaretDownFill, ownFill, Clock } from "react-bootstrap-icons";
+import { useDispatch } from "react-redux";
 
 const AddPost = () => {
   const [show, setShow] = useState(false);
+  const dispatch = useDispatch();
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -15,6 +17,11 @@ const AddPost = () => {
   const [localPost, setLocalPost] = useState({
     text: "",
   });
+
+  const handlePost = (event) => {
+    event.preventDefault();
+    dispatch(sendPost(localPost));
+  };
 
   return (
     <>
@@ -58,14 +65,14 @@ const AddPost = () => {
                         rows={7}
                         placeholder="Di cosa vorresti parlare?"
                         className="border-0 "
-                        onChange={(event) => setLocalPost(event.target.value)}
+                        onChange={(event) => setLocalPost({ text: event.target.value })}
                       />
                     </Form.Group>
                   </Form>
                 </Modal.Body>
                 <Modal.Footer className="p-1">
                   <Clock className="me-2 fs-5" />
-                  <Button variant="outline-secondary" className="rounded-pill py-1 px-3" onClick={sendPost(localPost)}>
+                  <Button variant="outline-secondary" className="rounded-pill py-1 px-3" onClick={handlePost}>
                     Pubblica
                   </Button>
                 </Modal.Footer>
